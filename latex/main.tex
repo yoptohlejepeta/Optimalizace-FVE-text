@@ -1,0 +1,94 @@
+\documentclass[a4paper, 12pt]{article}
+
+
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage[unicode]{hyperref}
+
+\usepackage{lipsum}
+\usepackage{fancyhdr}
+
+
+\pagestyle{fancy}
+
+\fancyhead{}
+\fancyhead[R]{Optimalizace fotovoltaických elektráren}
+\fancyhead[L]{Petr Kotlan}
+
+\fancyfoot{}
+\fancyfoot[L]{}
+\fancyfoot[R]{\thepage}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\author{Petr Kotlan}
+\title{Optimalizace fotovoltaických elektráren}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\addcontentsline{toc}{section}{Přehled}
+\addcontentsline{toc}{section}{Anotace}
+\addcontentsline{toc}{section}{Odkazy}
+
+\pagebreak
+
+
+\section*{Přehled}
+
+\begin{itemize}
+    \item \textbf{Název práce:} Optimalizace fotovoltaických elektráren
+    \item \textbf{Název práce ENG:} Optimization of photovoltaic power stations
+    \item \textbf{Autor:} Petr Kotlan
+    \item \textbf{Vedoucí práce:} Ing. Roman Vaibar
+    \item \textbf{Klíčová slova:} optimalizace, fotovoltaické elektrárny, investice/investiční prostředky, výnosnost
+    \item \textbf{Klíčová slova ENG:} optimization, photovoltaic power stations, investment/investment funds, profitability
+    \item 
+
+\end{itemize}
+
+
+\section*{Anotace}
+
+\subsection*{Anotace cz}
+Na základě zadaných adres budov bude provedena optimalizace využití střech pro instalaci fotovoltaických elektráren a optimální rozdělení investičních prostředků z daných hledisek:
+\begin{itemize}
+
+    \item Typu střechy – rovná, sedlová, valbová, atd.
+    \begin{itemize}
+        \item Sklon definuje úbytek využití osvitových hodin – využijeme již vytvořené rozhraní API
+    \end{itemize}
+    \item Spotřeby v daném místě.
+    \item Ceně energie definované odkupem dle OTE dle spotových cen viz odkaz \url{https://www.ote-cr.cz/cs/kratkodobe-trhy/elektrina/vnitrodenni-trh?date=2023-08-12}
+    \item Máme známý – objem z obchodované energie a ceny v závislosti na denním čase.
+    \item Optimalizace úložiště při nabití baterií v čase „levné energie“ a dodání v čase alespoň nějakého profitu. S porovnáním investičních nástrojů v daném čase jako jsou – spořící účty, ETF fondy, dluhopisy. Určení vnitřního výnosového čísla (IRR), čisté současné hodnoty (NPV) a porovnání jednotlivých investic vůči sobě.
+    \item Výpočet předpokládaného ročního výkonu dle osvitových hodin a ekvivalentního peněžního toku na základě – fixní cena za dodání.
+
+\end{itemize}
+
+\subsection*{Anotace eng}
+Based on the given addresses of buildings, the optimization of the use of roofs for the installation of photovoltaic power plants and the optimal distribution of investment funds from the given points of view will be carried out:
+\begin{itemize}
+
+    \item Type of roof - flat, saddle, hipped, etc.
+    \begin{itemize}
+        \item The slope defines the loss of use of daylight hours - we will use the already created API interface
+    \end{itemize}
+    \item Consumption in a given place.
+    \item Energy price defined by OTE by spot prices see link \url{https://www.ote-cr.cz/cs/kratkodobe-trhy/elektrina/vnitrodenni-trh?date=2023-08-12}
+    \item We know - the volume of traded energy and prices depending on the time of day.
+    \item Optimization of the storage when charging batteries at the time of "cheap energy" and delivery at least some profit. With a comparison of investment tools at that time such as - savings accounts, ETF funds, bonds. Determination of the internal rate of return (IRR), net present value (NPV) and comparison of individual investments against each other.
+    \item Calculation of the expected annual performance based on daylight hours and equivalent cash flow based on - fixed price for delivery.
+
+\end{itemize}
+
+\section*{Odkazy}
+
+\begin{itemize}
+    \item \url{https://www.ote-cr.cz/cs/kratkodobe-trhy/elektrina/vnitrodenni-trh?date=2023-08-12}
+    \item \url{https://www.ote-cr.cz/cs/kratkodobe-trhy/elektrina/vnitrodenni-trh?date=2023-08-12}
+\end{itemize}
+
+\end{document}
