@@ -1,4 +1,5 @@
 \babel@toc {czech}{}\relax 
-\contentsline {section}{Přehled}{1}{section*.1}%
-\contentsline {section}{Anotace}{1}{section*.1}%
-\contentsline {section}{Odkazy}{1}{section*.1}%
+\contentsline {section}{\numberline {1}Přehled}{2}{section.1}%
+\contentsline {section}{\numberline {2}Anotace}{2}{section.2}%
+\contentsline {section}{\numberline {3}Zásady pro vypracování}{4}{section.3}%
+\contentsline {section}{\numberline {4}Odkazy}{4}{section.4}%
