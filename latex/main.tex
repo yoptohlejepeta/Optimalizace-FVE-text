@@ -1,93 +1,138 @@
-\documentclass[a4paper, 12pt]{article}
+\documentclass[12pt, aspectratio=169]{beamer} % options: handout
 
+\usetheme{metropolis}
+\setbeamertemplate{frame footer}{\insertshorttitle~| \insertsection}
+\setbeamerfont{page number in head/foot}{size=\tiny}
+\setbeamercolor{footline}{fg=gray}
 
-\usepackage[czech]{babel}
+\usepackage[greek, czech]{babel}
 \usepackage[T1]{fontenc}
-\usepackage{graphicx}
-\usepackage[unicode]{hyperref}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amssymb}
 
-\usepackage{lipsum}
-\usepackage{fancyhdr}
+\metroset{sectionpage=none} % schova stranky s nazvem sekce
 
-
-\pagestyle{fancy}
-
-\fancyhead{}
-\fancyhead[R]{Optimalizace výnosu fotovoltaických elektráren}
-\fancyhead[L]{Petr Kotlan}
-
-\fancyfoot{}
-\fancyfoot[L]{}
-\fancyfoot[R]{\thepage}
-\renewcommand{\footrulewidth}{0.4pt}
-
-\author{Petr Kotlan}
-\title{Optimalizace výnosu fotovoltaických elektráren}
+\title[Optimalizace FVE]{Optimalizace investičních prostředků z hlediska výnosu fotovoltaických elektráren}
+\author[Kotlan]{Petr Kotlan}
+\institute[Přf UJEP]{Přírodovědecká fakulta\\ Univerzita J. E. Purkyně}
 \date{}
 
 \begin{document}
 
-\maketitle
-\tableofcontents
 
-\pagebreak
+\begin{frame}[plain]
 
-
-\section{Přehled}
-
-\begin{itemize}
-    \item \textbf{Název práce:} Optimalizace výnosu fotovoltaických elektráren
-    \item \textbf{Název práce ENG:} Optimization of photovoltaic power stations
-    \item \textbf{Autor:} Petr Kotlan
-    \item \textbf{Vedoucí práce:} Ing. Roman Vaibar
-    \item \textbf{Klíčová slova:} optimalizace, simplexová metoda, fotovoltaické elektrárny, investice/investiční prostředky, výnosnost
-    \item \textbf{Klíčová slova ENG:} optimization, simplex method, photovoltaic power stations, investment/investment funds, profitability
-    \item
-
-\end{itemize}
-
+    \maketitle
+    
+\end{frame}
 
 \section{Anotace}
 
-\subsection*{Anotace cz}
-Na základě zadaných adres budov bude provedena optimalizace využití střech pro instalaci fotovoltaických elektráren a optimální rozdělení investičních prostředků. Úloha bude převedena na úlohu lineárního programování a bude řešena simplexovou metodou. Optimalizace bude provedena na základě následujících hledisek:
-\begin{itemize}
+\begin{frame}{\insertsection}
+    Cílem bakalářské práce je vyvinout aplikaci, která pomocí lineárního programování (simplexová metoda)
+    optimalizuje rozdělení investičních prostředků pro instalaci fotovoltaických elektráren na daných objektech.
+    Optimalizace bude provedena na základě následujících hledisek:
+    \begin{itemize}
 
-    \item Typu střechy – rovná, sedlová, valbová, atd.
-          \begin{itemize}
-              \item Sklon definuje úbytek využití osvitových hodin – využijeme již vytvořené rozhraní API
-          \end{itemize}
-    \item Spotřeby v daném místě.
-    \item Ceně energie definované odkupem dle OTE dle spotových cen viz odkaz \url{https://www.ote-cr.cz/cs/kratkodobe-trhy/elektrina/vnitrodenni-trh?date=2023-08-12}
-    \item Máme známý – objem z obchodované energie a ceny v závislosti na denním čase.
-    \item Optimalizace úložiště při nabití baterií v čase „levné energie“ a dodání v čase alespoň nějakého profitu. S porovnáním investičních nástrojů v daném čase jako jsou – spořící účty, ETF fondy, dluhopisy. Určení vnitřního výnosového procenta (IRR – Internal Rate of Return), čisté současné hodnoty (NPV) a porovnání jednotlivých investic vůči sobě.
-    \item Výpočet předpokládaného ročního výkonu dle osvitových hodin a ekvivalentního peněžního toku na základě – fixní cena za dodání.
-
-\end{itemize}
-
-\subsection*{Anotace eng}
-Based on the given addresses of buildings, the use of roofs for the installation of photovoltaic power plants will be optimized and the optimal distribution of investment funds. The task will be converted to a linear programming task and will be solved by the simplex method. Optimization will be performed based on the following aspects:
-\begin{itemize}
-
-    \item Type of roof - flat, saddle, hipped, etc.
-          \begin{itemize}
-              \item The slope defines the loss of use of daylight hours - we will use the already created API interface
-          \end{itemize}
-    \item Consumption in a given place.
-    \item Energy price defined by OTE by spot prices see link \url{https://www.ote-cr.cz/cs/kratkodobe-trhy/elektrina/vnitrodenni-trh?date=2023-08-12}
-    \item We know - the volume of traded energy and prices depending on the time of day.
-    \item Optimization of the storage when charging batteries at the time of "cheap energy" and delivery at least some profit. With a comparison of investment tools at that time such as - savings accounts, ETF funds, bonds. Determination of the internal rate of return (IRR), net present value (NPV) and comparison of individual investments against each other.
-    \item Calculation of the expected annual performance based on daylight hours and equivalent cash flow based on - fixed price for delivery.
-
-\end{itemize}
-
-\section{Zásady pro vypracování}
-
+        \item Typu střechy – rovná, sedlová, valbová, atd.
+        \item Spotřeby v daném místě.
+        \item Ceně energie definované odkupem dle spotových cen \href{https://www.ote-cr.cz/cs/kratkodobe-trhy/elektrina/vnitrodenni-trh?date=2023-12-01}{OTE}.
+        \item Optimalizace uložiště.
+        \item Výpočet předpokládaného ročního výkonu dle osvitových hodin
     
-\section{Odkazy}
+    \end{itemize}
+\end{frame}
 
-\begin{itemize}
-    \item \url{https://www.ote-cr.cz/cs/kratkodobe-trhy/elektrina/vnitrodenni-trh?date=2023-08-12}
-\end{itemize}
+\section{Osnova}
+
+\begin{frame}{\insertsection}
+    \begin{enumerate}
+        \item Úvod
+        \item Současné modely výnosů fotovoltaických elektráren v ČR
+        \item Teoretická část
+        \begin{itemize}
+            \item Přehled ekonomických pojmů
+            \item Základní modely matematické optimalizace
+        \end{itemize}
+        \item Praktická část
+        \begin{itemize}
+            \item Popis aplikace
+            \item Případové studie
+        \end{itemize}
+        \item Zhodnocení výsledků
+        \item Závěr
+        
+    \end{enumerate}
+\end{frame}
+
+\section{Lineární programování}
+
+    \begin{frame}{\insertsection}
+    \begin{block}{Účelová funkce}
+        \vspace{10pt}
+        \centering
+        Min $c_1x_1 + c_2x_2 + \ldots + c_nx_n$
+    \end{block}
+
+    \begin{block}{Omezující podmínky}
+        \vspace{10pt}
+        \centering
+        $Ax \leq b$
+        \break
+        $x \geq 0$
+    \end{block}
+
+    \end{frame}
+
+\section{Porovnání}
+
+\begin{frame}{\insertsection}
+    \begin{itemize}
+        \item dluhopisy
+        \item \href{https://www.mesec.cz/produkty/sporici-ucty/}{spořící účty}
+        \item NPV – čistá současná hodnota
+        \item IRR – vnitřní výnosové procento
+    \end{itemize}
+
+\end{frame}
+\section{Čistá současná hodnota}
+
+\begin{frame}{\insertsection}
+
+    \begin{center}
+        $NPV = \frac{P_1}{(1+i)} + \frac{P_2}{(1+i)^2} + \ldots + \frac{P_N}{(1+i)^N} - K$
+    \end{center}
+    
+    \vspace{10pt} % Adjust the space here
+    \begin{itemize}
+        \item $NPV$ = čistá současná hodnota
+        \item $P_n$ = peněžní příjem z investice v jednotlivých letech její životnosti
+        \item $i$ = požadovaná výnosnost
+        \item $N$ = doba životnosti
+        \item $K$ = kapitálový výdaj
+    \end{itemize}
+
+\end{frame}
+
+\section{Vnitřní výnosové procento}
+
+\begin{frame}{\insertsection}
+
+    \begin{center}
+         $\frac{P_1}{(1+i)} + \frac{P_2}{(1+i)^2} + \ldots + \frac{P_N}{(1+i)^N} = K$
+    \end{center}
+    
+    \vspace{10pt}
+
+    \begin{itemize}
+        \item $IRR$ = vnitřní výnosové procento
+        \item $P_n$ = peněžní příjem z investice v jednotlivých letech její životnosti
+        \item $N$ = doba životnosti
+        \item $K$ = kapitálový výdaj
+        \item $i$ = hledaný úrokový koeficient
+    \end{itemize}
+
+\end{frame}
 
 \end{document}

@@ -13,3 +13,5 @@ literatura:
 <https://arl.ujep.cz/arl-ujep/cs/detail-ujep_us_cat-0160504-Investicni-rozhodovani-a-dlouhodobe-financovani/?disprec=1&iset=9>
 <https://arl.ujep.cz/arl-ujep/cs/detail-ujep_us_cat-m0307843-Metody-operacniho-vyzkumu/?disprec=5&iset=4>
 [Python Pulp - knihovna pro LP](https://coin-or.github.io/pulp/)
+
+https://www.fd.cvut.cz/personal/nagyivan/LinPrg1/LP1Skripta.pdf
