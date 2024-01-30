@@ -8,10 +8,11 @@ typ problému: optimalizace (simplex)
 vstupní data: orientace střechy (využitelnost sluneční energie, odchýlení od jihu), spotřeba objektu (využítí energie v daném objektu, akumulace energie/bez akumulace (baterky))
 
 literatura:
-[výpočty osvitu](https://oze.tzb-info.cz/fotovoltaika)
-[vyvoj celkovy cen elektriny](https://kalkulator.tzb-info.cz/cz/vyvoj-celkovych-cen-elektriny)
-<https://arl.ujep.cz/arl-ujep/cs/detail-ujep_us_cat-0160504-Investicni-rozhodovani-a-dlouhodobe-financovani/?disprec=1&iset=9>
-<https://arl.ujep.cz/arl-ujep/cs/detail-ujep_us_cat-m0307843-Metody-operacniho-vyzkumu/?disprec=5&iset=4>
-[Python Pulp - knihovna pro LP](https://coin-or.github.io/pulp/)
 
-https://www.fd.cvut.cz/personal/nagyivan/LinPrg1/LP1Skripta.pdf
+* [výpočty osvitu](https://oze.tzb-info.cz/fotovoltaika)
+* [vyvoj celkovy cen elektriny](https://kalkulator.tzb-info.cz/cz/vyvoj-celkovych-cen-elektriny)
+* <https://arl.ujep.cz/arl-ujep/cs/detail-ujep_us_cat-0160504-Investicni-rozhodovani-a-dlouhodobe-financovani/?disprec=1&iset=9>
+* <https://arl.ujep.cz/arl-ujep/cs/detail-ujep_us_cat-m0307843-Metody-operacniho-vyzkumu/?disprec=5&iset=4>
+* [Python Pulp - knihovna pro LP](https://coin-or.github.io/pulp/)
+
+<https://www.fd.cvut.cz/personal/nagyivan/LinPrg1/LP1Skripta.pdf>
