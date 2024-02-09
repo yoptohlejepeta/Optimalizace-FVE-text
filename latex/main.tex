@@ -14,7 +14,7 @@
 \metroset{sectionpage=none} % schova stranky s nazvem sekce
 
 \title[Optimalizace FVE]{Optimalizace investičních prostředků z hlediska výnosu fotovoltaických elektráren}
-\author[Kotlan]{Petr Kotlan}
+\author[Kotlan]{Petr Kotlan\\ Vedoucí práce: Ing. Roman Vaibar, Ph.D., MBA}
 \institute[Přf UJEP]{Přírodovědecká fakulta\\ Univerzita J. E. Purkyně}
 \date{}
 
@@ -33,15 +33,15 @@
 Cílem bakalářské práce je vyvinout aplikaci, která pomocí lineárního programování
 optimalizuje rozdělení investičních prostředků pro instalaci fotovoltaických elektráren na daných objektech.
 Optimalizace bude provedena na základě následujících hledisek:
+
 \begin{itemize}
-
-    \item Typu střechy – rovná, sedlová, valbová, atd.,
+    \item typu střechy -- rovná, sedlová, valbová atd.,
     \item spotřeby v daném místě,
-    \item ceně energie definované odkupem dle spotových cen OTE,
+    \item ceny energie definované odkupem dle spotových cen OTE, a.s.,
     \item optimalizace uložiště,
-    \item výpočet předpokládaného ročního výkonu dle osvitových hodin.
-
+    \item výpočtu předpokládaného ročního výkonu dle osvitových hodin.
 \end{itemize}
+
 \end{frame}
 
 \section{Osnova}
@@ -66,73 +66,78 @@ Optimalizace bude provedena na základě následujících hledisek:
     \end{enumerate}
 \end{frame}
 
-\section{Lineární programování}
 
-    \begin{frame}{\insertsection}
-    \begin{block}{Účelová funkce}
+\section{Datové zdroje a uložiště}
+
+\begin{frame}{\insertsection}
+    \begin{block}{Zdroje}
+        \begin{itemize}
+            \item \href{https://www.ote-cr.cz/}{OTE, a.s.},
+            \item FVE DCUK API (rozhraní pro správu FVE projektů),
+            \item \href{https://www.mesec.cz/produkty/sporici-ucty/}{srovnání spořících účtů}
+            \item \href{https://www.chmi.cz/historicka-data/pocasi/denni-data/Denni-data-dle-z.-123-1998-Sb}{ČHMÚ -- denní úhrn doby trvání slunečního svitu}
+        \end{itemize}        
+    \end{block}
+    \begin{block}{Uložiště}
+        \begin{itemize}
+            \item InfluxDB
+            \item MariaDB
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\section{Diagram}
+
+\begin{frame}[standout]
+    \centering
+    \includegraphics[height=1.1\textheight]{diagram.png}
+\end{frame}
+
+\section{Vyhodnocení výnosnosti investice}
+
+\begin{frame}{\insertsection}
+    \begin{block}{Čistá současná hodnota (NPV)}
         \vspace{10pt}
         \centering
-        Min $c_1x_1 + c_2x_2 + \ldots + c_nx_n$
+        $NPV = \frac{P_1}{(1+i)} + \frac{P_2}{(1+i)^2} + \ldots + \frac{P_n}{(1+i)^n} - K$
     \end{block}
 
-    \begin{block}{Omezující podmínky}
+    \begin{block}{Vnitřní výnosové procento (IRR)}
         \vspace{10pt}
         \centering
+        $\frac{P_1}{(1+IRR)} + \frac{P_2}{(1+IRR)^2} + \ldots + \frac{P_n}{(1+IRR)^n} = K$
+    \end{block}
+    \begin{itemize}
+        \item $n$ = počet let
+        \item $P_1, P_2, \ldots, P_n$ = peněžní příjmy z investice v jednotlivých letech
+        \item $K$ = kapitálový výdaj
+        \item $i$ = požadovaná míra výnosnosti
+    \end{itemize}
+\end{frame}
+
+
+\section{Matematická optimalizace}
+
+\begin{frame}{\insertsection}
+    \begin{block}{Formulace úlohy}
+        \vspace{10pt}
+        \centering
+        max $\rightarrow z = c_1x_1 + c_2x_2 + \ldots + c_nx_n$
+        \break
         $Ax \leq b$
         \break
         $x \geq 0$
     \end{block}
-
-    \end{frame}
-
-\section{Porovnání}
-
-\begin{frame}{\insertsection}
     \begin{itemize}
-        \item dluhopisy
-        \item \href{https://www.mesec.cz/produkty/sporici-ucty/}{spořící účty}
-        \item NPV – čistá současná hodnota
-        \item IRR – vnitřní výnosové procento
-    \end{itemize}
-
-\end{frame}
-\section{Čistá současná hodnota}
-
-\begin{frame}{\insertsection}
-
-    \begin{center}
-        $NPV = \frac{P_1}{(1+i)} + \frac{P_2}{(1+i)^2} + \ldots + \frac{P_N}{(1+i)^N} - K$
-    \end{center}
-    
-    \vspace{10pt} % Adjust the space here
-    \begin{itemize}
-        \item $NPV$ = čistá současná hodnota
-        \item $P_n$ = peněžní příjem z investice v jednotlivých letech její životnosti
-        \item $i$ = požadovaná výnosnost
-        \item $N$ = doba životnosti
-        \item $K$ = kapitálový výdaj
+        \item $x_1, x_2, \ldots, x_n$ = rozhodovací proměnné
+        \item $c_1, c_2, \ldots, c_n$ = cenové koeficienty
+        \item $A$ = matice strukturních koeficientů
+        \item $b$ = požadavková čísla
+        \item $z$ = cílová funkce
     \end{itemize}
 
 \end{frame}
 
-\section{Vnitřní výnosové procento}
-
-\begin{frame}{\insertsection}
-
-    \begin{center}
-         $\frac{P_1}{(1+i)} + \frac{P_2}{(1+i)^2} + \ldots + \frac{P_N}{(1+i)^N} = K$
-    \end{center}
-    
-    \vspace{10pt}
-
-    \begin{itemize}
-        \item $IRR$ = vnitřní výnosové procento
-        \item $P_n$ = peněžní příjem z investice v jednotlivých letech její životnosti
-        \item $N$ = doba životnosti
-        \item $K$ = kapitálový výdaj
-        \item $i$ = hledaný úrokový koeficient
-    \end{itemize}
-
-\end{frame}
+\section{Dalsi postup}
 
 \end{document}

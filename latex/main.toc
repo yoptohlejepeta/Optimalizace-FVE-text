@@ -1,7 +1,7 @@
 \babel@toc {czech}{}\relax 
 \beamer@sectionintoc {1}{Anotace}{2}{0}{1}
 \beamer@sectionintoc {2}{Osnova}{3}{0}{2}
-\beamer@sectionintoc {3}{Lineární programování}{4}{0}{3}
-\beamer@sectionintoc {4}{Porovnání}{5}{0}{4}
-\beamer@sectionintoc {5}{Čistá současná hodnota}{6}{0}{5}
-\beamer@sectionintoc {6}{Vnitřní výnosové procento}{7}{0}{6}
+\beamer@sectionintoc {3}{Datové zdroje a uložiště}{4}{0}{3}
+\beamer@sectionintoc {4}{Diagram}{5}{0}{4}
+\beamer@sectionintoc {5}{Vyhodnocení výnosnosti investice}{6}{0}{5}
+\beamer@sectionintoc {6}{Matematická optimalizace}{7}{0}{6}
