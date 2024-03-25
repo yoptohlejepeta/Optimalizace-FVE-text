@@ -1,32 +1,17 @@
-\documentclass[a4paper, 12pt]{article}
+\documentclass[a4paper, 12pt]{report}
 
 
 \usepackage[czech]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage[unicode]{hyperref}
-\usepackage{titlesec} 
-
-\usepackage{lipsum}
-\usepackage{fancyhdr}
-
-
-\pagestyle{fancy}
-
-\fancyhead{}
-\fancyhead[R]{Optimalizace výnosu fotovoltaických elektráren}
-\fancyhead[L]{Petr Kotlan}
-
-\fancyfoot{}
-\fancyfoot[L]{}
-\fancyfoot[R]{\thepage}
-\renewcommand{\footrulewidth}{0.4pt}
-\titleformat{\section}
-  {\sffamily}{\thesection}{1em}{}
-\titleformat{\subsection}
-  {\sffamily}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}
-  {\sffamily}{\thesubsubsection}{1em}{}
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
+\usepackage[pagestyles]{titlesec}
+\titleformat{\chapter}[display]{\normalfont\sffamily\bfseries}{}{0pt}{\Huge}
+% \titleformat{\section}[display]{\normalfont\sffamily\bfseries}{\thesection}{0pt}{\Large}
+\newpagestyle{mystyle}
+{\sethead[\thepage][][\chaptertitle]{}{}{\thepage}}
+\pagestyle{mystyle}
 
 \author{Petr Kotlan}
 \title{Optimalizace investičních prostředků z hlediska
@@ -35,32 +20,37 @@ výnosu fotovoltaických elektráren}
 
 \begin{document}
 
-
-\maketitle
+% \maketitle
+% \break
+\input{components/titlepage.tex}
 \tableofcontents
 
 \pagebreak
 
-\section{Úvod}
+\chapter{Úvod}
 
-\section{Současné modely výnosů fotovoltaických elektráren v ČR}
+\chapter{Současné modely výnosů fotovoltaických elektráren v ČR}
 
-\section{Teoretická část}
+\chapter{Teoretická část}
 
-\subsection{Přehled ekonomických pojmů}
+\section{Přehled ekonomických pojmů}
 
-\subsection{Základní modely matematické optimalizace}
+\section{Základní modely matematické optimalizace}
 
-\section{Praktická část}
+\chapter{Praktická část}
 
-\subsection{Popis aplikace}
-\subsubsection{Vstupní data}
+\section{Popis aplikace}
+
+\subsection{Data}
+% vstupni data?
+
+\subsection*{OTE}
 
 
-\subsection{Případové studie}
+\section{Případové studie}
 
-\section{Zhodnocení výsledků}
+\chapter{Zhodnocení výsledků}
 
-\section{Závěr}
+\chapter{Závěr}
 
 \end{document}
