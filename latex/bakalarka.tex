@@ -1,16 +1,20 @@
 \documentclass[a4paper, 12pt]{report}
 
 
-\usepackage[czech]{babel}
+\usepackage[czech]{babel} % czech language
 \usepackage{pdfpages} % for including pdf files
 \usepackage{microtype} % better text rendering
-\usepackage[T1]{fontenc}
-\usepackage{graphicx}
-\usepackage[hidelinks]{hyperref}
-\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
-\usepackage[pagestyles]{titlesec}
+\usepackage[T1]{fontenc} % better text rendering
+\usepackage{graphicx} % for images
+\usepackage[hidelinks]{hyperref} % for clickable links, hidelinks hides the ugly boxes
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry} % page layout
+\usepackage[pagestyles]{titlesec} % for customizing chapter titles
+
+% for customizing bibliography title
+\addto{\captionsczech}{\renewcommand{\bibname}{Seznam zdrojů}}
+
+% for customizing chapter titles
 \titleformat{\chapter}[display]{\normalfont\sffamily\bfseries}{}{0pt}{\Huge}
-% \titleformat{\section}[display]{\normalfont\sffamily\bfseries}{\thesection}{0pt}{\Large}
 \newpagestyle{mystyle}
 {\sethead[\thepage][][\chaptertitle]{}{}{\thepage}}
 \pagestyle{mystyle}
@@ -22,8 +26,6 @@ výnosu fotovoltaických elektráren}
 
 \begin{document}
 
-% \maketitle
-% \break
 \input{components/titlepage.tex}
 \includepdf[pages=-]{static/podklad_bp.pdf}
 
@@ -37,24 +39,21 @@ výnosu fotovoltaických elektráren}
 \chapter{Teoretická část}
 
 \section{Přehled ekonomických pojmů}
+\input{chapters/pojmy.tex}
 
 \section{Základní modely matematické optimalizace}
 
 \chapter{Praktická část}
 
 \section{Popis aplikace}
-
-\subsection{Data}
-% vstupni data?
-
-\subsection*{OTE}
+\input{chapters/aplikace/data.tex}
 
 
 \section{Případové studie}
 
 \chapter{Zhodnocení výsledků a závěr}
 
-\addcontentsline{toc}{chapter}{Seznam zdrojů}
-\chapter*{Seznam zdrojů}
+\addcontentsline{toc}{}{Seznam zdrojů}
+\input{components/citace.tex}
 
 \end{document}
