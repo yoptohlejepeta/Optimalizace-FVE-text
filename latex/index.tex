@@ -1,0 +1,87 @@
+\documentclass[a4paper, 12pt]{report}
+
+
+\usepackage[czech]{babel} % czech language
+\usepackage{amssymb} % for math symbols
+\usepackage{pdfpages} % for including pdf files
+\usepackage{microtype} % better text rendering
+\usepackage[T1]{fontenc} % better text rendering
+\usepackage{graphicx} % for images
+\usepackage[hidelinks]{hyperref} % for clickable links, hidelinks hides the ugly boxes
+\usepackage[a4paper,width=160mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry} % page layout
+\usepackage[pagestyles]{titlesec} % for customizing chapter titles
+\usepackage{parskip} % for no indent and space between paragraphs
+\usepackage{enumitem} % for customizing lists
+
+% for customizing bibliography title
+\addto{\captionsczech}{\renewcommand{\bibname}{Seznam zdrojů}}
+
+\renewcommand{\bibname}{Whatever floats your boat}
+
+% for customizing chapter titles
+\titleformat{\chapter}[display]{\normalfont\sffamily\bfseries}{}{0pt}{\Huge}
+\newpagestyle{mystyle}
+{\sethead[\thepage][][\chaptertitle]{}{}{\thepage}}
+\pagestyle{mystyle}
+
+% for customizing section titles
+\titleformat{\section}{\normalfont\Large\sffamily\bfseries}{\thesection}{1em}{}
+
+% for customizing subsection titles
+\titleformat{\subsection}{\normalfont\normalsize\sffamily\bfseries}{\thesubsection}{1em}{}
+
+% for customizing subsubsection titles
+\titleformat{\subsubsection}{\normalfont\sffamily\bfseries}{\thesubsubsection}{1em}{}
+
+\author{Petr Kotlan}
+\title{Optimalizace investičních prostředků z hlediska
+výnosu fotovoltaických elektráren}
+\date{}
+
+\begin{document}
+
+\input{components/titlepage.tex}
+\includepdf[pages=-]{static/podklad_bp.pdf}
+
+\tableofcontents
+
+\addcontentsline{toc}{chapter}{Úvod}
+\chapter*{Úvod}
+
+\chapter{Současné modely výnosů \\ fotovoltaických elektráren v ČR}
+
+\chapter{Teoretická část}
+
+Tato část je rozdělena do dvou kapitol. První kapitola se zabývá hodnotícími metodami investic, které jsou využívány v ekonomice.
+Druhá kapitola se zabývá lineárním programováním.
+
+\section{Přehled ekonomických pojmů}
+\input{chapters/pojmy.tex}
+
+\section{Základní modely matematické optimalizace}
+Tato kapitola vychází ze dvou učebních textů. Prvním je \textit{Matematika pro ekonomy} od R. Stolína \cite{matematika_pro_ekonomy} a druhým je \textit{Operační výzkum} od J. Demela \cite{demel}.
+
+
+V úvodu této kapitoly jsou popsány základní pojmy a formulace úlohy lineárního programování.
+
+Lineární programování patří k metodám \textit{operačního výzkumu}.
+Je zaměřeno na hledání optimálního řešení při kterém, jsou zároveň splněny omezující podmínky.
+
+
+\input{chapters/mat_modely.tex}
+
+\chapter{Praktická část}
+
+\section{Popis aplikace}
+\input{chapters/aplikace/data.tex}
+
+
+\section{Případové studie}
+
+\chapter{Zhodnocení výsledků a závěr}
+
+\addcontentsline{toc}{chapter}{Seznam zdrojů}
+\bibliographystyle{plain}
+\include{components/citace}
+
+\end{document}

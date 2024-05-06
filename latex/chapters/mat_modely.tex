@@ -1,0 +1,57 @@
+\subsection{Formulace úlohy lineárního programování}
+
+\subsubsection{Účelová funkce}
+
+
+Účelová funkce je lineární funkcí $n$ proměnných ve tvaru
+
+$$ z = c_1x_1 + c_2x_2 + \ldots + c_nx_n , $$
+
+
+kde $c_1, c_2, \ldots c_n$ jsou konstanty, které nazýváme \textit{cenové koeficienty} nebo \textit{koeficienty účelové funkce} a 
+$x_1, x_2, \ldots x_n$ jsou \textit{strukturní neznámé}.
+
+Účelová funkce se buď maximalizuje
+
+$$ \max z = c_1x_1 + c_2x_2 + \ldots + c_nx_n ,$$
+
+nebo minimalizuje
+
+$$ \min z = c_1x_1 + c_2x_2 + \ldots + c_nx_n .$$
+
+\subsubsection{Omezující podmínky}
+
+Omezující podmínky jsou lineární rovnice nebo nerovnice ve tvaru
+
+$$ a_{11}x_1 + a_{12}x_2 + \ldots + a_{1n}x_n \leq b_1 ,$$
+$$ a_{21}x_1 + a_{22}x_2 + \ldots + a_{2n}x_n \leq b_2 ,$$
+$$ \vdots $$
+$$ a_{m1}x_1 + a_{m2}x_2 + \ldots + a_{mn}x_n \leq b_m ,$$
+
+nebo
+
+$$ a_{11}x_1 + a_{12}x_2 + \ldots + a_{1n}x_n \geq b_1 ,$$
+$$ a_{21}x_1 + a_{22}x_2 + \ldots + a_{2n}x_n \geq b_2 ,$$
+$$ \vdots $$
+$$ a_{m1}x_1 + a_{m2}x_2 + \ldots + a_{mn}x_n \geq b_m ,$$
+
+kde $a_{ij}$ jsou konstanty, které nazýváme \textit{strukturní koeficienty} nebo \textit{koeficienty omezení}, $b_i$ jsou konstanty (tzv. \textit{požadavková čísla})
+a $x_1, x_2, \ldots x_n$ jsou \textit{strukturní neznámé}.
+
+Zároveň omezující podmínky vymezují pro každou proměnnou $x_1, x_2, \ldots x_n$ množinu hodnot, kterýh může nabývat. 
+Nejčastěji se jedná o podmínky tvaru $x_i \geq 0$ (nezápornost).
+Jinými případy mohou být například podmínky tvaru $x_i \leq 0$ (nekladnost) nebo $x_i$ může nabývat libovolné hodnoty („neomezeno“).
+
+\subsection{Maticové vyjádření}
+
+% Můžeme vyjádřit \textit{cenové koeficienty} jako vektor $c = (c_1, c_2, \ldots, c_n)^T$.
+Můžeme vyjádřit účelovou funkci jako $$ z = c^Tx ,$$
+kde $c = (c_1, c_2, \ldots, c_n)^T$ je vektor cenových koeficientů a $x = (x_1, x_2, \ldots, x_n)^T$ je vektor strukturních neznámých.
+
+Omezující podmínky můžeme vyjádřit jako maticový součin
+
+$$ Ax \leq b ,$$
+
+kde $A$ je matice strukturních koeficientů a $b$ je vektor pravých stran omezujících podmínek.
+
+\subsection{Typy úloh lineárního programování}
