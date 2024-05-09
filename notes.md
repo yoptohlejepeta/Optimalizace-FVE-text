@@ -27,3 +27,8 @@ budget
 pocet strech
 
 modely cen el. energii vzhledem k casu (rust ceny, pokles ceny) vzhledem ke spotrebe
+
+## !!!
+
+Pohlidat splnene cile. (da se pripadne upravit)
+50 stran
