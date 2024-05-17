@@ -14,15 +14,13 @@ kde $c_1, c_2, \ldots c_n$ jsou konstanty, které nazýváme \textit{cenové koe
 $x_1, x_2, \ldots x_n$ jsou \textit{strukturní neznámé}.
 
 Účelová funkce se buď maximalizuje
-% TODO: equation, labely
-% $$ \max z = c_1x_1 + c_2x_2 + \ldots + c_nx_n ,$$
+
 \begin{equation}
     \max z = c_1x_1 + c_2x_2 + \ldots + c_nx_n ,
 \end{equation}
 
 nebo minimalizuje
 
-% $$ \min z = c_1x_1 + c_2x_2 + \ldots + c_nx_n .$$
 \begin{equation}
     \min z = c_1x_1 + c_2x_2 + \ldots + c_nx_n .
 \end{equation}
@@ -31,21 +29,22 @@ nebo minimalizuje
 
 Omezující podmínky jsou lineární rovnice nebo nerovnice ve tvaru
 
+% TODO: ocitovat doslovne prepisy
+\begin{equation}
+    \begin{gathered}
+        a_{11}x_1 + a_{12}x_2 + \ldots + a_{1n}x_n \ \lesseqgtr \ b_1 \\
+        a_{21}x_1 + a_{22}x_2 + \ldots + a_{2n}x_n \ \lesseqgtr \ b_2 \\
+        \vdots \\
+        a_{m1}x_1 + a_{m2}x_2 + \ldots + a_{mn}x_n \ \lesseqgtr \ b_m
+    \end{gathered}
+\end{equation}
 
-$$ a_{11}x_1 + a_{12}x_2 + \ldots + a_{1n}x_n \ \lesseqgtr \ b_1 ,$$
-$$ a_{21}x_1 + a_{22}x_2 + \ldots + a_{2n}x_n \ \lesseqgtr \ b_2 ,$$
-$$ \vdots $$
-$$ a_{m1}x_1 + a_{m2}x_2 + \ldots + a_{mn}x_n \ \lesseqgtr \ b_m ,$$
-% TODO: doslovne prepisy
+kde na místě $\lesseqgtr$ může být $\leq$, $\geq$ nebo $=$.
 
-nebo
-
-$$ a_{11}x_1 + a_{12}x_2 + \ldots + a_{1n}x_n \geq b_1 ,$$
-$$ a_{21}x_1 + a_{22}x_2 + \ldots + a_{2n}x_n \geq b_2 ,$$
-$$ \vdots $$
-$$ a_{m1}x_1 + a_{m2}x_2 + \ldots + a_{mn}x_n \geq b_m ,$$
-
-kde $a_{ij}$ jsou konstanty, které nazýváme \textit{strukturní koeficienty} nebo \textit{koeficienty omezení}, $b_i$ jsou konstanty (tzv. \textit{požadavková čísla})
+Prvky $a_{ij}$ jsou konstanty, které nazýváme \textit{strukturní koeficienty} nebo \textit{koeficienty omezení},
+$b_1, b_2, \ldots, b_m$
+jsou konstanty (tzv. \textit{požadavková čísla})
+jsou konstanty, které nazýváme \textit{strukturní koeficienty} nebo \textit{koeficienty omezení}, $b_i$ jsou konstanty (tzv. \textit{požadavková čísla})
 a $x_1, x_2, \ldots x_n$ jsou \textit{strukturní neznámé}.
 
 Zároveň omezující podmínky vymezují pro každou proměnnou $x_1, x_2, \ldots x_n$ množinu hodnot, kterýh může nabývat. 
@@ -54,13 +53,14 @@ Jinými případy mohou být například podmínky tvaru $x_i \leq 0$ (nekladnos
 
 \subsection{Maticové vyjádření}
 
-Můžeme vyjádřit účelovou funkci jako $$ z = \bm{c}^T\bm{x} ,$$
+Můžeme vyjádřit účelovou funkci jako $$ z = \bm{c}^T\bm{x} \rightarrow \max ,$$
 kde $\bm{c} = (c_1, c_2, \ldots, c_n)^T$ je vektor cenových koeficientů a $\bm{x} = (x_1, x_2, \ldots, x_n)^T$ je vektor strukturních neznámých.
 
 Omezující podmínky můžeme vyjádřit jako maticový součin
 
 $$ \bm{A}\bm{x} \leq \bm{b} ,$$
 
-kde $\bm{A}$ je matice strukturních koeficientů a $\bm{b}$ je vektor pravých stran omezujících podmínek.
+kde $\bm{A}$ je matice strukturních koeficientů, $\bm{x}$ je vektor strukturních neznámých
+a $\bm{b}$ je vektor pravých stran omezujících podmínek.
 
 \subsection{Typy úloh lineárního programování}
