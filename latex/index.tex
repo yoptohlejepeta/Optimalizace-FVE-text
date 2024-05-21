@@ -18,6 +18,7 @@
 \usepackage{tocloft} % for customizing table of contents
 \usepackage{multicol}
 \usepackage{hyperref}
+\usepackage{textcase}
 
 % toc font
 \renewcommand{\cfttoctitlefont}{\normalfont\Huge\sffamily\bfseries}
@@ -64,9 +65,27 @@
 \begin{document}
 
 \input{components/titlepage.tex}
+\thispagestyle{empty}
+\mbox{}
+
+
 \includepdf[pages=-]{static/podklad_bp.pdf}
 \input{components/prohlaseni.tex}
+\thispagestyle{empty}
+\mbox{}
+\newpage
+
+\input{components/podekovani.tex}
+
+\thispagestyle{empty}
+\mbox{}
+\newpage
+
 \input{components/abstrakt.tex}
+
+\thispagestyle{empty}
+\mbox{}
+\newpage
 
 \tableofcontents
 
