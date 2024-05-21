@@ -2,8 +2,7 @@
 
 \subsubsection{Účelová funkce}
 
-
-Účelová funkce je lineární funkcí $n$ proměnných ve tvaru
+je lineární funkcí $n$ proměnných ve tvaru
 
 \begin{equation}
     z = c_1x_1 + c_2x_2 + \ldots + c_nx_n ,
@@ -27,7 +26,7 @@ nebo minimalizuje
 
 \subsubsection{Omezující podmínky}
 
-Omezující podmínky jsou lineární rovnice nebo nerovnice ve tvaru
+jsou lineární rovnice nebo nerovnice ve tvaru
 
 % TODO: ocitovat doslovne prepisy
 \begin{equation}
@@ -51,16 +50,19 @@ Zároveň omezující podmínky vymezují pro každou proměnnou $x_1, x_2, \ldo
 Nejčastěji se jedná o podmínky tvaru $x_i \geq 0$ (nezápornost).
 Jinými případy mohou být například podmínky tvaru $x_i \leq 0$ (nekladnost) nebo $x_i$ může nabývat libovolné hodnoty („neomezeno“).
 
-\subsection{Maticové vyjádření}
+\subsection{Maticový zápis úlohy LP}
 
-Můžeme vyjádřit účelovou funkci jako $$ z = \bm{c}^T\bm{x} \rightarrow \max ,$$
-kde $\bm{c} = (c_1, c_2, \ldots, c_n)^T$ je vektor cenových koeficientů a $\bm{x} = (x_1, x_2, \ldots, x_n)^T$ je vektor strukturních neznámých.
+Celý problém lineárního programování můžeme pro přehlednost zapsat maticově.
+Účelovou funkci vyjádříme jako
+jako $$ z = \bm{c}^T\bm{x} \rightarrow \max ,$$
+nebo $$ z = \bm{c}^T\bm{x} \rightarrow \min ,$$
+kde $\bm{c}$ je vektor cenových koeficientů a $\bm{x}$ je vektor strukturních neznámých.
 
 Omezující podmínky můžeme vyjádřit jako maticový součin
 
 $$ \bm{A}\bm{x} \leq \bm{b} ,$$
 
-kde $\bm{A}$ je matice strukturních koeficientů, $\bm{x}$ je vektor strukturních neznámých
+kde $\bm{A}$ je matice strukturních koeficientů
 a $\bm{b}$ je vektor pravých stran omezujících podmínek.
 
 \subsection{Typy úloh lineárního programování}

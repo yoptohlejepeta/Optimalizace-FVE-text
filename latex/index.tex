@@ -15,6 +15,15 @@
 \usepackage{enumitem} % for customizing lists
 \usepackage{fancyhdr} % for customizing headers and footers
 \usepackage{bm}
+\usepackage{tocloft} % for customizing table of contents
+\usepackage{multicol}
+\usepackage{hyperref}
+
+% toc font
+\renewcommand{\cfttoctitlefont}{\normalfont\Huge\sffamily\bfseries}
+\renewcommand{\cftchapfont}{\sffamily\bfseries\normalsize}
+\renewcommand{\cftsecfont}{\sffamily\normalsize}
+
 
 
 % for customizing bibliography title
@@ -29,22 +38,24 @@
 \fancypagestyle{plain}{
     \renewcommand{\headrulewidth}{0pt}
     \fancyhf{}
-    \fancyfoot[R]{\thepage}
+    \fancyfoot[C]{\thepage}
 }
 
 \pagestyle{fancy}
 \fancyhead{}
-\fancyhead[R]{\thesection}
-\fancyhead[L]{\rightmark}
+\fancyhead[R]{\rightmark}
+\fancyhead[L]{\thechapter\ \chaptername}
+
+\renewcommand{\sectionmark}[1]{\markright{#1}}
 
 % for customizing section titles
 \titleformat{\section}{\normalfont\Large\sffamily\bfseries}{\thesection}{1em}{}
 
 % for customizing subsection titles
-\titleformat{\subsection}{\normalfont\normalsize\sffamily\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsection}{\Large\normalsize\sffamily\bfseries}{\thesubsection}{1em}{}
 
-% for customizing subsubsection titles
-\titleformat{\subsubsection}{\normalfont\sffamily\bfseries}{\thesubsubsection}{1em}{}
+% for customizing subsubsection titles (no new lines after title)
+\titleformat{\subsubsection}[runin]{\normalfont\sffamily\bfseries}{\thesubsubsection}{1em}{}
 
 \author{Petr Kotlan}
 \title{Optimalizace investičních prostředků z hlediska výnosu fotovoltaických elektráren}
@@ -54,14 +65,23 @@
 
 \input{components/titlepage.tex}
 \includepdf[pages=-]{static/podklad_bp.pdf}
+\input{components/prohlaseni.tex}
+\input{components/abstrakt.tex}
 
 \tableofcontents
 
 \addcontentsline{toc}{chapter}{Úvod}
+\renewcommand{\chaptername}{Úvod}
 \chapter*{Úvod}
 
-\chapter{Současné modely výnosů fotovoltaických elektráren v ČR}
+% \chapter{Současné modely výnosů fotovoltaických elektráren v ČR}
+\chapter{Fotovoltaika}
 
+Úvodní část si klade za cíl seznámit čtenáře s problematikou fotovoltaiky a návratnosti investic do fotovoltaických elektráren.
+
+\input{chapters/fotovol.tex}
+
+\renewcommand{\chaptername}{Teoretická část}
 \chapter{Teoretická část}
 
 Tato část je rozdělena do dvou kapitol. První kapitola se zabývá hodnotícími metodami investic, které jsou využívány v ekonomice.
@@ -70,7 +90,8 @@ Druhá kapitola se zabývá lineárním programováním.
 \section{Přehled ekonomických pojmů}
 \input{chapters/pojmy.tex}
 
-\section{Základní modely matematické optimalizace}
+% \section{Základní modely matematické optimalizace}
+\section{Matematická optimalizace}
 Tato kapitola vychází ze dvou učebních textů. Prvním je \textit{Matematika pro ekonomy} od R. Stolína \cite{matematika_pro_ekonomy} a druhým je \textit{Operační výzkum} od J. Demela \cite{demel}.
 
 
@@ -78,10 +99,9 @@ V úvodu této kapitoly jsou popsány základní pojmy a formulace úlohy lineá
 
 Lineární programování patří k metodám \textit{operačního výzkumu}.
 Je zaměřeno na hledání optimálního řešení při kterém, jsou zároveň splněny omezující podmínky.
-
-
 \input{chapters/mat_modely.tex}
 
+\renewcommand{\chaptername}{Praktická část}
 \chapter{Praktická část}
 
 \section{Popis aplikace}
@@ -90,6 +110,7 @@ Je zaměřeno na hledání optimálního řešení při kterém, jsou zároveň 
 
 \section{Případové studie}
 
+\renewcommand{\chaptername}{Zhodnocení výsledků a závěr}
 \chapter{Zhodnocení výsledků a závěr}
 
 \addcontentsline{toc}{chapter}{Seznam zdrojů}
