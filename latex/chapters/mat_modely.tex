@@ -1,3 +1,12 @@
+\section{Matematická optimalizace}
+Tato část vychází ze dvou učebních textů. Prvním je \textit{Matematika pro ekonomy} od R. Stolína \cite{matematika_pro_ekonomy} a druhým je \textit{Operační výzkum} od J. Demela \cite{demel}.
+
+
+V úvodu této kapitoly jsou popsány základní pojmy a formulace úlohy lineárního programování.
+
+Lineární programování patří k metodám \textit{operačního výzkumu}.
+Je zaměřeno na hledání optimálního řešení při kterém, jsou zároveň splněny omezující podmínky.
+
 \subsection{Formulace úlohy lineárního programování}
 
 \subsubsection{Účelová funkce}
@@ -31,14 +40,14 @@ jsou lineární rovnice nebo nerovnice ve tvaru
 % TODO: ocitovat doslovne prepisy
 \begin{equation}
     \begin{gathered}
-        a_{11}x_1 + a_{12}x_2 + \ldots + a_{1n}x_n \ \lesseqgtr \ b_1 \\
-        a_{21}x_1 + a_{22}x_2 + \ldots + a_{2n}x_n \ \lesseqgtr \ b_2 \\
+        a_{11}x_1 + a_{12}x_2 + \ldots + a_{1n}x_n \ \lesseqgtr \ b_1, \\
+        a_{21}x_1 + a_{22}x_2 + \ldots + a_{2n}x_n \ \lesseqgtr \ b_2, \\
         \vdots \\
-        a_{m1}x_1 + a_{m2}x_2 + \ldots + a_{mn}x_n \ \lesseqgtr \ b_m
+        a_{m1}x_1 + a_{m2}x_2 + \ldots + a_{mn}x_n \ \lesseqgtr \ b_m,
     \end{gathered}
 \end{equation}
 
-kde na místě $\lesseqgtr$ může být $\leq$, $\geq$ nebo $=$.
+kde na místě označeném $\lesseqgtr$ se může vyskytnout symbol $\leq$, $\geq$ nebo $=$\footnote{Tato formulace je doslovným přepisem z \cite{demel} str. 9.}.
 
 Prvky $a_{ij}$ jsou konstanty, které nazýváme \textit{strukturní koeficienty} nebo \textit{koeficienty omezení},
 $b_1, b_2, \ldots, b_m$
@@ -46,7 +55,7 @@ jsou konstanty (tzv. \textit{požadavková čísla})
 jsou konstanty, které nazýváme \textit{strukturní koeficienty} nebo \textit{koeficienty omezení}, $b_i$ jsou konstanty (tzv. \textit{požadavková čísla})
 a $x_1, x_2, \ldots x_n$ jsou \textit{strukturní neznámé}.
 
-Zároveň omezující podmínky vymezují pro každou proměnnou $x_1, x_2, \ldots x_n$ množinu hodnot, kterýh může nabývat. 
+Zároveň omezující podmínky vymezují pro každou proměnnou $x_1, x_2, \ldots x_n$ množinu hodnot, kterých může nabývat. 
 Nejčastěji se jedná o podmínky tvaru $x_i \geq 0$ (nezápornost).
 Jinými případy mohou být například podmínky tvaru $x_i \leq 0$ (nekladnost) nebo $x_i$ může nabývat libovolné hodnoty („neomezeno“).
 
@@ -54,13 +63,25 @@ Jinými případy mohou být například podmínky tvaru $x_i \leq 0$ (nekladnos
 
 Celý problém lineárního programování můžeme pro přehlednost zapsat maticově.
 Účelovou funkci vyjádříme jako
-jako $$ z = \bm{c}^T\bm{x} \rightarrow \max ,$$
-nebo $$ z = \bm{c}^T\bm{x} \rightarrow \min ,$$
+jako
+
+\begin{equation}
+    z = \bm{c}^T\bm{x} \rightarrow \max,
+\end{equation}
+
+nebo
+
+\begin{equation}
+    z = \bm{c}^T\bm{x} \rightarrow \min,
+\end{equation}
+
 kde $\bm{c}$ je vektor cenových koeficientů a $\bm{x}$ je vektor strukturních neznámých.
 
 Omezující podmínky můžeme vyjádřit jako maticový součin
 
-$$ \bm{A}\bm{x} \leq \bm{b} ,$$
+\begin{equation}
+    \bm{A}\bm{x} \leq \bm{b} ,    
+\end{equation}
 
 kde $\bm{A}$ je matice strukturních koeficientů
 a $\bm{b}$ je vektor pravých stran omezujících podmínek.

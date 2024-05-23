@@ -1,26 +1,64 @@
+\section{Přehled ekonomických pojmů}
+
+\subsection{Základní pojmy}
+
 \subsection{Ukazatele výnosnosti investice}
 
-% \subsection{Návratnost investice} ROI
 
-% \subsection{Diskontované cash-flow} -> npv -> irr
+\subsubsection{Návratnost investice}
+($ROI$ -- Return of Investment)
+% https://www.moneta.cz/slovnik-pojmu/detail/roi
+vyjadřuje zisk nebo ztrátu z investice v procentech.
+
+\begin{equation}
+    ROI = \frac{(P_1 + P_2 + \ldots + P_n) - K}{K} \cdot 100,
+\end{equation}
+kde
+\begin{itemize}[label={}]
+    \item $n$ -- počet let,
+    \item $P_1, P_2, \ldots, P_n$ -- peněžní příjmy z investice v jednotlivých letech,
+    \item $K$ -- kapitálový výdaj,
+    \item $ROI$ -- návratnost investice.
+\end{itemize}
+
+\subsubsection{Diskontované cash-flow}
+($DCF$ -- Discounted Cash Flow)
+vyjadřuje současnou hodnotu budoucích peněžních toků.
+
+\begin{equation}
+    DCF = \frac{P_1}{(1+i)} + \frac{P_2}{(1+i)^2} + \ldots + \frac{P_n}{(1+i)^n},
+\end{equation}
+
+kde
+
+\begin{itemize}[label={}]
+    \item $n$ -- počet let,
+    \item $P_1, P_2, \ldots, P_n$ -- peněžní příjmy z investice v jednotlivých letech,
+    \item $i$ -- úroková míra (diskontní sazba),
+    \item $DCF$ -- diskontované cash-flow.
+\end{itemize}
 
 \subsubsection*{Čistá současná hodnota}
-
 ($NPV$ -- Net Present Value)
+vyjadřuje současnou hodnotu budoucích peněžních toků po odečtení kapitálového výdaje.
 
-$$ NPV = \frac{P_1}{(1+i)} + \frac{P_2}{(1+i)^2} + \ldots + \frac{P_n}{(1+i)^n} - K $$
+\begin{equation}    
+NPV = \frac{P_1}{(1+i)} + \frac{P_2}{(1+i)^2} + \ldots + \frac{P_n}{(1+i)^n} - K,
+\end{equation}
 
 \subsubsection*{Vnitřní výnosové procento}
-
 ($IRR$ -- Internal Rate of Return)
+je úroková míra, při níž se současná hodnota peněžních příjmů z investice rovná kapitálovým výdajům. Investice se považuje za výhodnou, když $IRR$ představuje vyšší úrok, než je požadovaná minimální výnosnost investice.
 
-
-$$ \frac{P_1}{(1+IRR)} + \frac{P_2}{(1+IRR)^2} + \ldots + \frac{P_n}{(1+IRR)^n} = K , $$
+\begin{equation}
+    \frac{P_1}{(1+IRR)} + \frac{P_2}{(1+IRR)^2} + \ldots + \frac{P_n}{(1+IRR)^n} = K,
+\end{equation}
 
 kde
 \begin{itemize}[label={}]
     \item $n$ -- počet let,
     \item $P_1, P_2, \ldots, P_n$ -- peněžní příjmy z investice v jednotlivých letech,
     \item $K$ -- kapitálový výdaj,
-    \item $i$ -- požadovaná míra výnosnosti.
+    \color{red}
+    \item $IRR$ -- požadovaná míra výnosnosti. NEDAVA SMYSL
 \end{itemize}

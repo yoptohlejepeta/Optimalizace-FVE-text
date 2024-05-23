@@ -1,18 +1,60 @@
-\section{Komponenty fotovoltaické elektrárny}
+\section{Technický popis fotovoltaických elektráren}
+% https://www.fotovia.cz/komponenty-fve
+% TODO: vysvetlit proc to tu je
 
+\subsection{Veličiny}
+
+\subsection{Komponenty fotovoltaické elektrárny}
 Fotovoltaická elektrárna se skládá z několika základních komponent.
-\subsection{Fotovoltaický panel}
 
-\subsection{Baterie}
+\subsubsection{Fotovoltaické panely}
 
-\subsection{Invertor}
+jsou nezbytnou součástí každé fotovoltaické elektrárny.
+Jejich hlavním úkolem je absorbovat sluneční záření a přeměnit ho na elektrickou energii.
+
+\subsubsection{Baterie}
+
+(nebo také akumulátory) slouží k ukládání přebytků energie, které nebyly spotřebovány.
+Dělíme je na virtuální uložiště a fyzické uložiště.
+
+\begin{itemize}
+    \item \textbf{Virtuální uložiště} -- funguje na základě podepsání smlouvy s distributorem. Přebytky vyrobené energie se posílají do veřejné sítě, odkud se v případě potřeby mohou odčerpat.  Ve virtuální baterii můžete uložit tolik energie, kolik vám smluvně umožňuje distributor. Mají několik nevýhod:
+    \begin{itemize}
+        \item je to komerční produkt, který nenabízí všichni distributoři a nikde se negarantují stálé podmínky,
+        \item platíte za využívání paušální poplatek,
+        \item v případě výpadku elektřiny nemáte záložní zdroj energie.
+    \end{itemize}
+    \item \textbf{Fyzické bateriové uložiště} -- je zařízení, které je uložené v domě. Vyrobená energie se do baterií ukládá a v případě potřeby se z nich odebírá. Nevýhodou fyzické baterie je její kapacita.
+\end{itemize}
+
+
+% \subsubsection{Virtuální uložiště}
+% funguje na základě podepsání smlouvy s distributorem. Přebytky vyrobené energie se posílají do veřejné sítě, odkud se v případě potřeby mohou odčerpat.
+% Virtuální úložiště nejsou plnou náhradou fyzických baterií. Mají několik nevýhod:
+
+% \begin{itemize}
+%     \item je to komerční produkt, který nenabízí všichni distributoři a nikde se negarantují stálé podmínky,
+%     \item platíte za využívání paušální poplatek,
+%     \item v případě výpadku elektřiny nemáte záložní zdroj energie. 
+% \end{itemize}
+
+% \subsubsection{Fyzické bateriové uložiště} je zařízení, které je uložené v domě. Vyrobená energie se do baterií ukládá a v případě potřeby se z nich odebírá.
+% Nevýhodou fyzické baterie je její kapacita. Ve virtuální baterii můžete uložit tolik energie, kolik vám smluvně umožňuje distributor.
+
+
+\subsubsection{Invertor}
+
+(nebo také měnič či střídač) je podobně jako fotovoltaické panely
+nezbytnou součástí každé fotovoltaické elektrárny.
+Invertor je zařízení, které mění stejnosměrný proud (DC) na střídavý proud (AC).
+Střídavý proud je nezbytný pro napájení elektrických spotřebičů.
 
 
 
-\section{Druhy fotovoltaických systémů}
+\subsection{Druhy fotovoltaických systémů}
 % https://www.fotovia.cz/blog/typy-fotovoltaickych-elektraren
 
-Rozdílem mezi jednotlyvími druhy fotovoltaických systémů je jejich napojení do veřejné elektrické sítě a integrace akumulátorů.
+Rozdílem mezi jednotlivými druhy fotovoltaických systémů je jejich napojení do veřejné elektrické sítě a integrace akumulátorů.
 Podle těchto kritérií je lze rozdělit do tří základních kategorií:
 
 \begin{itemize}
@@ -21,13 +63,11 @@ Podle těchto kritérií je lze rozdělit do tří základních kategorií:
     \item hybridní
 \end{itemize}
 
-\subsection{Ostrovní elektrárna}
+\subsubsection{Ostrovní elektrárna}
 
-Ostrovní (tzv. off-grid) fotovoltaická elektrárna je samostatný systém, který není připojen k elektrické síti.
+(tzv. off-grid) je samostatný systém, který není připojen k elektrické síti.
 Klíčovou částí toho systému je baterie (akumulátor), která slouží k ukládání přebytků energie.
 Jsou užitečné v oblastech, kde připojení k elektrické síti není možné.
-
-\newpage
 
 \begin{multicols}{2}
     \textbf{Výhody:}
@@ -45,7 +85,25 @@ Jsou užitečné v oblastech, kde připojení k elektrické síti není možné.
     \end{itemize}
 \end{multicols}
 
-\subsection{Standardní elektrárna}
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[>=stealth,thick]
+        % Nodes
+        \node[draw, minimum height=1cm] (panel) at (0,0) {Panel};
+        \node[draw, circle] (inverter) at (3,0) {Invertor};
+        \node[draw] (baterie) at (3,-2) {Baterie};
+        \node[draw, circle] (odb) at (6,0) {Spotřebič};
+        % Arrows
+        \draw[->] (panel) -- (inverter);
+        \draw[->] (inverter) -- (baterie);
+        \draw[->] (inverter) -- (odb);
+
+    \end{tikzpicture}
+    \caption{Schéma off-grid fotovoltaické elektrárny}
+    \label{fig:offgrid_schema}
+\end{figure}
+
+\subsubsection{Standardní elektrárna}
 
 Standardní (tzv. on-grid) fotovoltaická elektrárna je připojena k elektrické síti.
 Veškerou přebytečnou energii lze prodat dodavateli elektřiny.
@@ -67,7 +125,26 @@ Veškerou přebytečnou energii lze prodat dodavateli elektřiny.
 \end{multicols}
 
 
-\subsection{Hybridní elektrárna}
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=stealth,thick]
+        % Nodes
+        \node[draw, minimum height=1cm] (panel) at (0,0) {Panel};
+        \node[draw, circle] (inverter) at (3,0) {Invertor};
+        \node[draw, circle] (odb) at (6,0) {Spotřebič};
+        \node[draw, minimum width=2cm] (sita) at (3,-2) {Elektrická síť};
+        % Arrows
+        \draw[->] (panel) -- (inverter);
+        \draw[->] (inverter) -- (odb);
+        \draw[->] (inverter) -- (sita);
+
+    \end{tikzpicture}
+    \caption{Schéma on-grid fotovoltaické elektrárny}
+    \label{fig:ongrid_schema}
+    \end{figure}
+
+
+\subsubsection{Hybridní elektrárna}
 
 Hybridní fotovoltaické elektrárny kombinují výhody ostrovních a standardních systémů.
 Jsou připojeny k elektrické síti, ale zároveň mají akumulátory, které slouží jako záložní zdroj energie.
@@ -86,5 +163,29 @@ Jsou připojeny k elektrické síti, ale zároveň mají akumulátory, které sl
         \item vysoké počáteční náklady,
         \item baterie vyžadují pravidelnou údržbu.
     \end{itemize}
-    
+
 \end{multicols}
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[>=stealth,thick]
+        % Nodes
+        \node[draw, minimum height=1cm] (panel) at (0,0) {Panel};
+        \node[draw, circle] (inverter) at (3,0) {Invertor};
+        \node[draw] (baterie) at (2,-2) {Baterie};
+        \node[draw, circle] (odb) at (6,0) {Spotřebič};
+        \node[draw, minimum width=2cm] (sita) at (4.5,-2) {Elektrická síť};
+        % Arrows
+        \draw[->] (panel) -- (inverter);
+        \draw[->] (inverter) -- (baterie);
+        \draw[->] (inverter) -- (odb);
+        \draw[->] (inverter) -- (sita);
+
+    \end{tikzpicture}
+    \caption{Schéma hybridní fotovoltaické elektrárny}
+    \label{fig:hybrid_schema}
+\end{figure}
+
+
+\section{Jak fotovoltaika šetří peníze}
+% https://oze.tzb-info.cz/fotovoltaika/24229-stroj-na-penize-fotovoltaika-pri-vysokych-cenach-elektriny-usetri-desetitisice-korun-rocne

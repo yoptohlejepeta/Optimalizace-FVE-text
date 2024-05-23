@@ -14,11 +14,13 @@
 \usepackage{parskip} % for no indent and space between paragraphs
 \usepackage{enumitem} % for customizing lists
 \usepackage{fancyhdr} % for customizing headers and footers
-\usepackage{bm}
+\usepackage{bm} % for bold math symbols
 \usepackage{tocloft} % for customizing table of contents
-\usepackage{multicol}
-\usepackage{hyperref}
-\usepackage{textcase}
+\usepackage{multicol} % for multiple columns
+\usepackage{hyperref} % for clickable links
+\usepackage{textcase} % for uppercasing text
+\usepackage{tikz} % for drawing
+\usepackage{float} % for floating images
 
 % toc font
 \renewcommand{\cfttoctitlefont}{\normalfont\Huge\sffamily\bfseries}
@@ -53,7 +55,7 @@
 \titleformat{\section}{\normalfont\Large\sffamily\bfseries}{\thesection}{1em}{}
 
 % for customizing subsection titles
-\titleformat{\subsection}{\Large\normalsize\sffamily\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsection}{\large\sffamily\bfseries}{\thesubsection}{1em}{}
 
 % for customizing subsubsection titles (no new lines after title)
 \titleformat{\subsubsection}[runin]{\normalfont\sffamily\bfseries}{\thesubsubsection}{1em}{}
@@ -94,34 +96,26 @@
 \chapter*{Úvod}
 
 % \chapter{Současné modely výnosů fotovoltaických elektráren v ČR}
-\chapter{Fotovoltaika}
+\chapter{Přehled problematiky fotovoltaiky}
+\renewcommand{\chaptername}{Přehled problematiky fotovoltaiky}
 
-Úvodní část si klade za cíl seznámit čtenáře s problematikou fotovoltaiky a návratnosti investic do fotovoltaických elektráren.
+Úvodní část si klade za cíl seznámit čtenáře s základními pojmy z oblasti fotovoltaiky.
 
 \input{chapters/fotovol.tex}
 
-\renewcommand{\chaptername}{Teoretická část}
 \chapter{Teoretická část}
+\renewcommand{\chaptername}{Teoretická část}
 
-Tato část je rozdělena do dvou kapitol. První kapitola se zabývá hodnotícími metodami investic, které jsou využívány v ekonomice.
-Druhá kapitola se zabývá lineárním programováním.
+Tato kapitola je rozdělena do dvou částí. První část se zabývá základními ekonomickými pojmy využívanými v investiční analýze.
+Druhá část se zabývá matematickou optimalizací metodou lineárního programování.
 
-\section{Přehled ekonomických pojmů}
 \input{chapters/pojmy.tex}
 
 % \section{Základní modely matematické optimalizace}
-\section{Matematická optimalizace}
-Tato kapitola vychází ze dvou učebních textů. Prvním je \textit{Matematika pro ekonomy} od R. Stolína \cite{matematika_pro_ekonomy} a druhým je \textit{Operační výzkum} od J. Demela \cite{demel}.
-
-
-V úvodu této kapitoly jsou popsány základní pojmy a formulace úlohy lineárního programování.
-
-Lineární programování patří k metodám \textit{operačního výzkumu}.
-Je zaměřeno na hledání optimálního řešení při kterém, jsou zároveň splněny omezující podmínky.
 \input{chapters/mat_modely.tex}
 
-\renewcommand{\chaptername}{Praktická část}
 \chapter{Praktická část}
+\renewcommand{\chaptername}{Praktická část}
 
 \section{Popis aplikace}
 \input{chapters/aplikace/data.tex}
