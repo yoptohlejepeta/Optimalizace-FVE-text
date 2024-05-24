@@ -5,7 +5,7 @@
 \subsection{Ukazatele výnosnosti investice}
 
 
-\subsubsection{Návratnost investice}
+\subsubsection{Výnosnost investice}
 ($ROI$ -- Return of Investment)
 % https://www.moneta.cz/slovnik-pojmu/detail/roi
 vyjadřuje zisk nebo ztrátu z investice v procentech.
@@ -13,6 +13,7 @@ vyjadřuje zisk nebo ztrátu z investice v procentech.
 \begin{equation}
     ROI = \frac{(P_1 + P_2 + \ldots + P_n) - K}{K} \cdot 100,
 \end{equation}
+
 kde
 \begin{itemize}[label={}]
     \item $n$ -- počet let,
@@ -30,7 +31,6 @@ vyjadřuje současnou hodnotu budoucích peněžních toků.
 \end{equation}
 
 kde
-
 \begin{itemize}[label={}]
     \item $n$ -- počet let,
     \item $P_1, P_2, \ldots, P_n$ -- peněžní příjmy z investice v jednotlivých letech,
@@ -46,6 +46,15 @@ vyjadřuje současnou hodnotu budoucích peněžních toků po odečtení kapit�
 NPV = \frac{P_1}{(1+i)} + \frac{P_2}{(1+i)^2} + \ldots + \frac{P_n}{(1+i)^n} - K,
 \end{equation}
 
+kde
+\begin{itemize}[label={}]
+    \item $n$ -- počet let,
+    \item $P_1, P_2, \ldots, P_n$ -- peněžní příjmy z investice v jednotlivých letech,
+    \item $K$ -- kapitálový výdaj,
+    \item $i$ -- úroková míra (diskontní sazba),
+    \item $NPV$ -- čistá současná hodnota.
+\end{itemize}
+
 \subsubsection*{Vnitřní výnosové procento}
 ($IRR$ -- Internal Rate of Return)
 je úroková míra, při níž se současná hodnota peněžních příjmů z investice rovná kapitálovým výdajům. Investice se považuje za výhodnou, když $IRR$ představuje vyšší úrok, než je požadovaná minimální výnosnost investice.
@@ -59,6 +68,5 @@ kde
     \item $n$ -- počet let,
     \item $P_1, P_2, \ldots, P_n$ -- peněžní příjmy z investice v jednotlivých letech,
     \item $K$ -- kapitálový výdaj,
-    \color{red}
-    \item $IRR$ -- požadovaná míra výnosnosti. NEDAVA SMYSL
+    \item $IRR$ -- vnitřní výnosové procento.
 \end{itemize}
