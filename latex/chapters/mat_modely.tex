@@ -46,7 +46,7 @@ jsou lineární rovnice nebo nerovnice ve tvaru
     \end{gathered}
 \end{equation}
 
-kde na místě označeném $\lesseqgtr$ se může vyskytnout symbol $\leq$, $\geq$ nebo $=$\footnote{Tato formulace je doslovným přepisem z \cite{demel} str. 9.}.
+kde na místě označeném $\lesseqgtr$ se může vyskytnout symbol $\leq$, $\geq$ nebo $=$\footnote{Tato formulace je doslovným přepisem z \textit{Operační výzkum} J. Demel \cite{demel} str. 9.}.
 
 Prvky $a_{ij}$ jsou konstanty, které nazýváme \textit{strukturní koeficienty} nebo \textit{koeficienty omezení},
 $b_1, b_2, \ldots, b_m$
@@ -74,15 +74,38 @@ nebo
     z = \bm{c}^T\bm{x} \rightarrow \min,
 \end{equation}
 
-kde $\bm{c}$ je vektor cenových koeficientů a $\bm{x}$ je vektor strukturních neznámých.
+kde $\bm{c}$ je sloupcový vektor cenových koeficientů a $\bm{x}$ je sloupcový vektor \textit{strukturních neznámých}.
 
-Omezující podmínky můžeme vyjádřit jako maticový součin
+\textit{Strukturní koeficienty} můžeme vyjádřit jako matici
 
 \begin{equation}
-    \bm{A}\bm{x} \leq \bm{b} ,    
+    \bm{A} = 
+    \begin{pmatrix}
+        a_{11} & a_{12} & \ldots & a_{1n} \\
+        a_{21} & a_{22} & \ldots & a_{2n} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        a_{m1} & a_{m2} & \ldots & a_{mn}
+    \end{pmatrix}
 \end{equation}
 
-kde $\bm{A}$ je matice strukturních koeficientů
-a $\bm{b}$ je vektor pravých stran omezujících podmínek.
+a za předpokladu, že jsou všechny omezující podmínky stejného typu (tzn. $\leq$, $\geq$ nebo $=$), můžeme je vyjádřit jako 
+
+\begin{equation}
+    \begin{split}
+        \bm{A}\bm{x} &\leq \bm{b} \quad \text{nebo} \quad 
+        \bm{A}\bm{x} \geq \bm{b} \quad \text{nebo} \quad 
+        \bm{A}\bm{x} = \bm{b},
+    \end{split}
+    \end{equation}
+
+kde $\bm{b}$ je sloupcový vektor \textit{požadavkových čísel}.
 
 \subsection{Typy úloh lineárního programování}
+
+V následující časti jsou popsány některé typické úlohy lineárního programování \footnote{Podle \textit{Matematika pro ekonomy} R. Stolín \cite{matematika_pro_ekonomy}}.
+
+\subsubsection{Úlohy výrobního plánování}
+
+\subsubsection{Směšovací úlohy}
+
+\subsubsection{Úlohy o dělení materiálu}
