@@ -1,4 +1,4 @@
-\section{Matematická optimalizace}
+\section{Lineární programování}
 Tato část vychází ze dvou učebních textů. Prvním je \textit{Matematika pro ekonomy} od R. Stolína \cite{matematika_pro_ekonomy} a druhým je \textit{Operační výzkum} od J. Demela \cite{demel}.
 
 
@@ -105,6 +105,91 @@ kde $\bm{b}$ je sloupcový vektor \textit{požadavkových čísel}.
 V následující časti jsou popsány některé typické úlohy lineárního programování \footnote{Podle \textit{Matematika pro ekonomy} R. Stolín \cite{matematika_pro_ekonomy}}.
 
 \subsubsection{Úlohy výrobního plánování}
+jsou jedny z nejčastěji řešených úloh lineárního programování.
+Představme si výrobce, který má možnost vyrábět $n$ druhů produktů.
+Má k dispozici omezenou kapacitu $m$ výrobních zdrojů (pracovníci, stroje, suroviny, atd.).
+Cílem je určit, jaký objem jednotlivých produktů má být vyroben, aby bylo dosaženo maximálního zisku.
+
+Pojďmě si tedy říct, co pro nás proměnné z obecného vyjádření úlohy lineárního programování znamenají konkrétně v případě výrobního plánování.
+
+\begin{itemize}[label={}]
+    \item $x_j$ ($j = 1, 2, \ldots, n$) je množství $j$-tého produktu, které má být vyrobeno \\(tzn. \textit{strukturní neznámá}),
+    \item $c_j$ ($j = 1, 2, \ldots, n$) je zisk z prodeje jedné jednotky $j$-tého produktu \\(tzn. \textit{cenový koeficient}),
+    \item $a_{ij}$ ($i = 1, 2, \ldots, m$; $j = 1, 2, \ldots, n$) je množství $i$-tého výrobního zdroje, které je potřeba k výrobě jedné jednotky $j$-tého produktu \\(tzn. \textit{strukturní koeficient}),
+    \item $b_i$ ($i = 1, 2, \ldots, m$) je množství $i$-tého výrobního zdroje, které je k dispozici \\(tzn. \textit{požadavkové číslo}).
+\end{itemize}
+
+Úloha má pak tvar
+
+\begin{equation}
+        \max z = c_1x_1 + c_2x_2 + \ldots + c_nx_n,
+\end{equation}
+
+za podmínek
+
+\begin{equation}
+    \begin{gathered}
+        a_{11}x_1 + a_{12}x_2 + \ldots + a_{1n}x_n \leq b_1, \\
+        a_{21}x_1 + a_{22}x_2 + \ldots + a_{2n}x_n \leq b_2, \\
+        \vdots \\
+        a_{m1}x_1 + a_{m2}x_2 + \ldots + a_{mn}x_n \leq b_m, \\
+        x_1, x_2, \ldots, x_n \geq 0.
+    \end{gathered}
+\end{equation}
+
+Ve zkráceném zápisu
+
+\begin{equation}
+    \begin{gathered}
+        \max z = \bm{c}^T\bm{x}, \\
+        \bm{A}\bm{x} \leq \bm{b}, \\
+        \bm{x} \geq 0.
+    \end{gathered}
+\end{equation}
+
+\textbf{Příklad:}
+
+Podnik vyrábí dva druhy produktů $A$ a $B$. Každý z nich vyžaduje určité množství surovin na výrobu.
+Na vyrobení jednoho kusu produktu $A$ je potřeba 2 jednotky suroviny $S_1$, 1 jednotky suroviny $S_2$ a 1 jednotka suroviny $S_3$.
+Na vyrobení jednoho kusu produktu $B$ je potřeba 2 jednotky suroviny $S_1$, 3 jednotky suroviny $S_2$ a 1 jednotka suroviny $S_3$.
+Celkové množství surovin $S_1$, $S_2$ a $S_3$ je omezeno na 40, 30 a 20 jednotek.
+Zisk z prodeje jednoho kusu produktu $A$ je 5 Kč a z prodeje jednoho kusu produktu $B$ je 10 Kč.
+Jak bude vypadat úloha lineárního programování pro tento příklad?
+
+\textbf{Řešení:}
+
+Sestavíme přehlednou tabulku se všemi informacemi.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{} & \textbf{A} & \textbf{B} & \textbf{Disponibilní množství (ks)}\\
+        \hhline{|=|=|=|=|}
+        $S_1$ & 2 & 2 & 40 \\
+        \hline
+        $S_2$ & 1 & 3 & 30 \\
+        \hline
+        $S_3$ & 1 & 1 & 20 \\
+        \hhline{|=|=|=|=|}
+        \textbf{Zisk (Kč)} & 5 & 10 & -- \\
+        \hline
+    \end{tabular}
+    \caption{Informace o produktech a surovinách.}
+    \label{tab:vyroba}
+\end{table}
+
+Nyní můžeme sestavit úlohu lineárního programování.
+
+\begin{equation}
+    \begin{gathered}
+        \max z = 5x_1 + 10x_2, \\
+        2x_1 + 2x_2 \leq 40, \\
+        x_1 + 3x_2 \leq 30, \\
+        x_1 + x_2 \leq 20, \\
+        x_1, x_2 \geq 0.
+    \end{gathered}
+\end{equation}
 
 \subsubsection{Směšovací úlohy}
 

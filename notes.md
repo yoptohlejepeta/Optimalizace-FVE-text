@@ -28,6 +28,9 @@ pocet strech
 
 modely cen el. energii vzhledem k casu (rust ceny, pokles ceny) vzhledem ke spotrebe
 
+INFLACE
+<https://www.czso.cz/documents/10180/132433649/Inflace_2000_2023.pdf>
+
 ## !!!
 
 Pohlidat splnene cile. (da se pripadne upravit)

@@ -23,6 +23,7 @@
 \usepackage{float} % for floating images
 \usepackage{siunitx} % for SI units
 \usepackage{caption} % for customizing captions
+\usepackage{hhline} % for double lines in tables
 
 % toc font
 \renewcommand{\cfttoctitlefont}{\normalfont\Huge\sffamily\bfseries}
@@ -42,8 +43,9 @@
 
 \pagestyle{plain}
 \fancyhead{}
-\fancyhead[R]{\sffamily\rightmark} % Use \sffamily here
-\fancyhead[L]{\sffamily\thechapter\ \chaptername} % Use \sffamily here
+\fancyhead[R]{\sffamily\rightmark}
+\fancyhead[L]{\sffamily\thechapter\ \chaptername}
+\setlength{\headheight}{15pt}
 \renewcommand{\headrulewidth}{0.4pt}
 
 \renewcommand{\sectionmark}[1]{\markright{#1}}
