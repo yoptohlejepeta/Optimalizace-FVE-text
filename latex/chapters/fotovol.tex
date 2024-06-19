@@ -1,6 +1,9 @@
 \section{Technický popis fotovoltaických elektráren}
+
 % https://www.fotovia.cz/komponenty-fve
 % TODO: vysvetlit proc to tu je
+
+% schema tvary
 
 \subsection{Veličiny}
 
@@ -14,7 +17,9 @@ Značíme ji symbolem \si{\watt\hour}. Při měření spotřeby elektřiny se ne
 
 
 \subsection{Komponenty fotovoltaické elektrárny}
-Fotovoltaická elektrárna se skládá z několika základních komponent.
+To, jaké komponenty se investor rozhodne koupit do svého fotovoltaického systému, může zásadně ovlivnit návratnost této investice.
+Některé komponenty jsou pro elektrárnu nezbytné, jiné slouží k optimalizaci výkonu při různých podmínkách či specifickém využití.
+Zde uvádím některé základní komponenty fotovoltaické elektrárny.
 
 \subsubsection{Fotovoltaické panely}
 
@@ -55,9 +60,28 @@ Dělíme je na virtuální uložiště a fyzické uložiště.
 
 (nebo také měnič či střídač) je podobně jako fotovoltaické panely
 nezbytnou součástí každé fotovoltaické elektrárny.
-Invertor je zařízení, které mění stejnosměrný proud (DC) na střídavý proud (AC).
-Střídavý proud je nezbytný pro napájení elektrických spotřebičů.
+Jeho hlavní funkcí je přeměna stejnosměrného proudu na proud střídavý.
+Inverotr rozděluje vyrobenou energii do tří fází. To kolik dávkuje do jednotlivých fází záleží na typu invertoru.
 
+\begin{itemize}
+    \item Symetrikcý invertor -- levnější typ, dávkuje elektřinu rovnoměrně do všech tří fází.
+    \item Asymetrický invertor -- dražší typ, při dávkování zohledňuje spotřebu na všech fázích.
+\end{itemize}
+
+Pokud by tedy například fotovoltaika vyrobila 6 \si{\kWh} elektřiny a spotřeba by na jednotlivých fázích vypdala následovně:
+
+\begin{itemize}
+    \item Fáze 1: 3 \si{\kWh}
+    \item Fáze 2: 2 \si{\kWh}
+    \item Fáze 3: 0.5 \si{\kWh}
+\end{itemize}
+
+Symetrický invertor rozdělí elektřinu rovnoměrně (2 \si{\kWh} na každou fázi), takže na fázi 2 a 3 vznikne přebytek, který se pošle do sítě a na fázi 1 energie chybí, tzn. musí se dobrat ze sítě.
+Asymetrický invertor elektřinu rozdělí tak, že nebude nutné ze sítě nic dobírat, ani do ní nic posílat.  
+
+\subsubsection{Optimizér}
+je zařízení, které se připojuje k jednotlivým fotovoltaickým panelům. Výkon elektrárny se odvíjí od výkony nejméně vákoného článku.
+V případě že je snížen výkon jednoho panelu, optimizér zajistí přemostění tohoto panelu.
 
 
 \subsection{Druhy fotovoltaických systémů}
@@ -105,6 +129,7 @@ Jsou užitečné v oblastech, kde připojení k elektrické síti není možné.
         % Arrows
         \draw[->] (panel) -- (inverter);
         \draw[->] (inverter) -- (baterie);
+        \draw[->] (baterie) -- (inverter);
         \draw[->] (inverter) -- (odb);
 
     \end{tikzpicture}
@@ -155,7 +180,7 @@ Veškerou přebytečnou energii lze prodat dodavateli elektřiny.
 
 \subsubsection{Hybridní elektrárna}
 
-Hybridní fotovoltaické elektrárny kombinují výhody ostrovních a standardních systémů.
+kombinuje výhody ostrovních a standardních systémů.
 Jsou připojeny k elektrické síti, ale zároveň mají akumulátory, které slouží jako záložní zdroj energie.
 
 \begin{multicols}{2}
@@ -187,6 +212,7 @@ Jsou připojeny k elektrické síti, ale zároveň mají akumulátory, které sl
         % Arrows
         \draw[->] (panel) -- (inverter);
         \draw[->] (inverter) -- (baterie);
+        \draw[->] (baterie) -- (inverter);
         \draw[->] (inverter) -- (odb);
         \draw[->] (inverter) -- (sita);
 

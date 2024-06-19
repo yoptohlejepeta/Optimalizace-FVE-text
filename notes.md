@@ -35,3 +35,8 @@ INFLACE
 
 Pohlidat splnene cile. (da se pripadne upravit)
 50 stran
+
+## Prakticka cast
+
+OTE - zdroj za roky (cashflow)
+fixni vykup

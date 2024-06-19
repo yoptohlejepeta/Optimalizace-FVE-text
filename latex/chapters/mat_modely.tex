@@ -4,16 +4,17 @@ Tato část vychází ze dvou učebních textů. Prvním je \textit{Matematika p
 
 V úvodu této kapitoly jsou popsány základní pojmy a formulace úlohy lineárního programování.
 
-Lineární programování patří k metodám \textit{operačního výzkumu}.
-Je zaměřeno na hledání optimálního řešení při kterém, jsou zároveň splněny omezující podmínky.
-
 \subsection{Formulace úlohy lineárního programování}
+
+Lineární programování patří k metodám \textit{operačního výzkumu}.
+% Je zaměřeno na hledání optimálního řešení při kterém, jsou zároveň splněny omezující podmínky.
+Cílem je nalezení optimálního řešení při splnění daných podmínek.
 
 \subsubsection{Účelová funkce}
 
 je lineární funkcí $n$ proměnných ve tvaru
 
-\begin{equation}
+\begin{equation} \label{objective}
     z = c_1x_1 + c_2x_2 + \ldots + c_nx_n ,
 \end{equation}
 
@@ -23,13 +24,13 @@ $x_1, x_2, \ldots x_n$ jsou \textit{strukturní neznámé}.
 
 Účelová funkce se buď maximalizuje
 
-\begin{equation}
+\begin{equation} \label{max_objective}
     \max z = c_1x_1 + c_2x_2 + \ldots + c_nx_n ,
 \end{equation}
 
 nebo minimalizuje
 
-\begin{equation}
+\begin{equation} \label{min_objective}
     \min z = c_1x_1 + c_2x_2 + \ldots + c_nx_n .
 \end{equation}
 
@@ -37,7 +38,7 @@ nebo minimalizuje
 
 jsou lineární rovnice nebo nerovnice ve tvaru
 
-\begin{equation}
+\begin{equation} \label{constraints}
     \begin{gathered}
         a_{11}x_1 + a_{12}x_2 + \ldots + a_{1n}x_n \ \lesseqgtr \ b_1, \\
         a_{21}x_1 + a_{22}x_2 + \ldots + a_{2n}x_n \ \lesseqgtr \ b_2, \\
@@ -55,8 +56,16 @@ jsou konstanty, které nazýváme \textit{strukturní koeficienty} nebo \textit{
 a $x_1, x_2, \ldots x_n$ jsou \textit{strukturní neznámé}.
 
 Zároveň omezující podmínky vymezují pro každou proměnnou $x_1, x_2, \ldots x_n$ množinu hodnot, kterých může nabývat. 
-Nejčastěji se jedná o podmínky tvaru $x_i \geq 0$ (nezápornost).
-Jinými případy mohou být například podmínky tvaru $x_i \leq 0$ (nekladnost) nebo $x_i$ může nabývat libovolné hodnoty („neomezeno“).
+Jedná o podmínky tvaru
+\begin{equation} \label{sign_restrictions}
+    x_i \geq 0 \quad \text{(nezápornost)} \quad \text{nebo} \quad x_i \leq 0 \quad \text{(nekladnost)}.
+\end{equation}
+
+Jinými případ může být, kdy $x_i$ může nabývat libovolné hodnoty („neomezeno“).
+
+\subsubsection{Přípustným řešením} se nazývá vektor $x = (x_1, x_2, \ldots, x_n)$, který vyhovuje všem omezujícím podmínkám (\ref{constraints}) a zároveň podmínkám nezápornosti respektive nekladnosti (\ref{sign_restrictions})
+
+\subsubsection{Optimální řešení} úlohy, je takové přípustné řešení, kdy účelová funkce nabývá maxima (\ref{max_objective}) respektive minima (\ref{min_objective}).
 
 \subsection{Maticový zápis úlohy LP}
 
@@ -102,7 +111,8 @@ kde $\bm{b}$ je sloupcový vektor \textit{požadavkových čísel}.
 
 \subsection{Typy úloh lineárního programování}
 
-V následující časti jsou popsány některé typické úlohy lineárního programování \footnote{Podle \textit{Matematika pro ekonomy} R. Stolín \cite{matematika_pro_ekonomy}}.
+V následující časti jsou popsány některé typické úlohy lineárního programování.
+% \footnote{Podle \textit{Matematika pro ekonomy} R. Stolín \cite{matematika_pro_ekonomy}}
 
 \subsubsection{Úlohy výrobního plánování}
 jsou jedny z nejčastěji řešených úloh lineárního programování.
@@ -231,7 +241,7 @@ Jídelníček musí obsahovat alespoň \SI{3000}{kcal} využitelné energie,
 \SI{70}{g} bílkovin,
 \SI{1,8}{mg} vitamínu B,
 \SI{75}{mg} vitamínu C a zároveň být co nejlevnější.
-V následující tabulce jsou uvedeny údaje o obsahu látek v jednotce přislušné potraviny a cena jedné jednotky.
+V tabulce \ref{tab:potraviny} jsou uvedeny údaje o obsahu látek v jednotce přislušné potraviny a cena jedné jednotky.
 \footnote{Hodnoty jsou převzaty z \textit{Matematika pro ekonomy} R. Stolín \cite{matematika_pro_ekonomy} příklad 6.2.1}
 \begin{table}[H]
     \centering
@@ -295,14 +305,10 @@ Cílem je minimalizovat náklady na dopravu zboží. Proměnné vyjádříme ná
 
 \begin{equation}
     \begin{gathered}
-        % \min z = c_{11}x_{11} + c_{12}x_{12} + \ldots + c_{mn}x_{mn}, \\
         \min z = \sum_{i=1}^{m} \sum_{j=1}^{n} c_{ij}x_{ij}, \\
-        \sum_{j=1}^{n} x_{ij} \leq a_i, \\
-        \sum_{i=1}^{m} x_{ij} \geq b_j, \\
+        \sum_{j=1}^{n} x_{ij} \leq a_i \quad (i = 1, 2, \ldots, m), \\
+        \sum_{i=1}^{m} x_{ij} \geq b_j \quad (j = 1, 2, \ldots, n), \\
         x_{ij} \geq 0 \quad (i = 1, 2, \ldots, m; j = 1, 2, \ldots, n).
     \end{gathered}
 \end{equation}
 
-
-
-\subsection{Řešení úloh lineárního programování}
