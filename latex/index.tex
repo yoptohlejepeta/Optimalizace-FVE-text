@@ -24,6 +24,7 @@
 \usepackage{siunitx} % for SI units
 \usepackage{caption} % for customizing captions
 \usepackage{hhline} % for double lines in tables
+\usepackage{svg} % for svg images
 
 % toc font
 \renewcommand{\cfttoctitlefont}{\normalfont\Huge\sffamily\bfseries}
@@ -38,7 +39,7 @@
 \fancypagestyle{plain}{
     \renewcommand{\headrulewidth}{0pt}
     \fancyhf{}
-    \fancyfoot[C]{\sffamily\selectfont\thepage}
+    \fancyfoot[C]{\sffamily\selectfont--~\thepage~--}
 }
 
 \pagestyle{plain}
@@ -99,8 +100,15 @@
 \tableofcontents
 
 \addcontentsline{toc}{chapter}{Úvod}
-\renewcommand{\chaptername}{Úvod}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
+
 \chapter*{Úvod}
+\renewcommand{\chaptername}{Úvod}
+\input{chapters/uvod.tex}
 
 % \chapter{Současné modely výnosů fotovoltaických elektráren v ČR}
 \chapter{Fotovoltaika}
@@ -116,12 +124,7 @@
 
 \chapter{Praktická část}
 \renewcommand{\chaptername}{Praktická část}
-
-\section{Popis aplikace}
-\input{chapters/aplikace/data.tex}
-
-
-\section{Případové studie}
+\input{chapters/aplikace/popis.tex}
 
 \renewcommand{\chaptername}{Zhodnocení výsledků a závěr}
 \chapter{Zhodnocení výsledků a závěr}

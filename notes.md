@@ -38,5 +38,5 @@ Pohlidat splnene cile. (da se pripadne upravit)
 
 ## Prakticka cast
 
-OTE - zdroj za roky (cashflow)
-fixni vykup
+Dum - tepelna ztrata (starsi dum, normal, novostavba)
+spotrebice - lednicka (70 w porad), tv (150 w), pc (200 w), zehlicka (2000 w), susicka (2000 w), pracka (2000 w), mycka (2000 w), sporak (3000 w), bojler (3500 w), klimatizace (3000 w), topeni (3000 w), osvetleni led (200 w), vzduchotechnika (200 w, rozdil leto/zima), cisticka odp. vod (180 w porad), bazen (450 w), virivka (1200 w)

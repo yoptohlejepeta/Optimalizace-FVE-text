@@ -1,24 +1,24 @@
-V první kapitole je popsána základní problematika fotovoltaických elektráren.
-Je zde uveden základní technický popis, jednotlivé komponenty ze kterých se elektrárna skládá a druhy systémů, které se v praxi využívají.
+Fotovoltaika je technologie, která přímo přeměňuje sluneční záření na elektřinu.
+K výrobě elektřiny není potřeba žádné palivo a elektrárny, proto se fotovoltaické elektrárny řadí mezi obnovitelné zdroje energie.
 
-Fotovoltaika je technologie, která přímo přeměňuje sluneční záření na elektřinu. K výrobě elektřiny není potřeba žádné palivo a elektrárny 
 
 \section{Technický popis fotovoltaických elektráren}
-
 % https://www.fotovia.cz/komponenty-fve
-% TODO: vysvetlit proc to tu je
 
-% schema tvary
+Při pořizování fotovoltaické elektrárny je k dobrému výběru dobré znát parametry jednotlivých částí, ze kterých se skládá.
+
+
 
 \subsection{Veličiny}
 
 \subsubsection{Watt} je jednotkou výkonu a rovná se vykonané práci za jendotku času.
-Značíme ji symbolem \si{\watt}.
+Značíme symbolem \si{\watt}.
 
 \subsubsection{Watt hodina} je jednotkou energie a rovná se práci stroje o výkonu jednoho wattu, který pracuje po dobu jedné hodiny.
 Značíme ji symbolem \si{\watt\hour}. Při měření spotřeby elektřiny se nejčastěji se užívá v násobku kilowatt hodiny (\si{\kWh}).
 
 \subsubsection{Killowatt--peak} je jednotkou špičkového výkonu fotovoltaické elektrárny. Tento výkon je při standardních testovacích podmínkách.
+Značíme symbolem \si{\kW}p.
 
 
 \subsection{Komponenty fotovoltaické elektrárny}
@@ -145,7 +145,7 @@ Jsou užitečné v oblastech, kde připojení k elektrické síti není možné.
 \subsubsection{Standardní elektrárna}
 
 Standardní (tzv. on-grid) fotovoltaická elektrárna je připojena k elektrické síti.
-Veškerou přebytečnou energii lze prodat dodavateli elektřiny.
+Veškerou přebytečnou energii lze prodat dodavateli elektřiny a v případě potřeby ji lze i odebírat.
 
 \begin{multicols}{2}
     \textbf{Výhody:}
@@ -229,3 +229,29 @@ Jsou připojeny k elektrické síti, ale zároveň mají akumulátory, které sl
 
 \section{Jak fotovoltaika šetří peníze}
 % https://oze.tzb-info.cz/fotovoltaika/24229-stroj-na-penize-fotovoltaika-pri-vysokych-cenach-elektriny-usetri-desetitisice-korun-rocne
+Fotovoltaické elektrárny představují významný způsob, jak snižovat náklady na elektřinu v domácnostech.
+V domácnosti přispívá fotovoltaika k úspoře peněz dvěma hlavními způsoby.
+
+% \begin{itemize}
+%     \item Vyrobená elektřina, která se spotřebuje na místě, se nemusí nakoupit ze sítě.
+%     \item Přebytek elektřiny se prodá dodavateli do sítě
+% \end{itemize}
+\subsection{Spotřeba vyrobené elektřiny}
+
+Vyrobená elektřina, která se spotřebuje na místě, se nemusí nakoupit ze sítě.
+Pro tuto úsporu jsou důležité dva faktory:
+
+\begin{itemize}
+    \item \textbf{Kolik elektřiny fotovoltaika vyrobí.} V ČR je horní limit pro výkon domácí elektrárny 10 \si{\kW}p. Pokud pro hrubý odhad výroby použijeme jednoduchý přepočet, kdy 1 instalovaný \si{\kW}p vyrobí za rok 1 MWh, zjistíme, že v ČR lze ročně ušetřit maximálně 10 MWh. Na vyšší výkon je potřeba licence nebo provoz v ostrovním režimu.
+    \item \textbf{Kolik elektřiny domácnost spotřebuje.} Fotovoltaika vyrábí nejvíce elektřiny vyrábí přes den a v létě. Největší spotřeba domácnosti je ale v zimě a večer. Spotřeba domácnosti
+\end{itemize}
+
+% \includegraphics[width=\textwidth]{static/average-daily-consumption.png}
+\begin{figure}
+    % https://www.researchgate.net/publication/326358349_Load_Profile_of_Typical_Residential_Buildings_in_Bulgaria
+    \includegraphics[width=\textwidth]{static/average-daily-consumption.png}
+    \caption{Denní spotřeba elektřiny v domácnosti během všedního dne.} % Zdroj: \cite{bulgaria}
+    \label{fig:average_daily_consumption}
+\end{figure}
+
+\subsection{Prodej přebytků elektřiny}
