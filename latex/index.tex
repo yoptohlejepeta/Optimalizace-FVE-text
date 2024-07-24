@@ -24,7 +24,7 @@
 \usepackage{siunitx} % for SI units
 \usepackage{caption} % for customizing captions
 \usepackage{hhline} % for double lines in tables
-\usepackage{svg} % for svg images
+\usetikzlibrary{shapes.geometric} % for drawing
 
 % toc font
 \renewcommand{\cfttoctitlefont}{\normalfont\Huge\sffamily\bfseries}
@@ -126,8 +126,8 @@
 \renewcommand{\chaptername}{Praktická část}
 \input{chapters/aplikace/popis.tex}
 
-\renewcommand{\chaptername}{Zhodnocení výsledků a závěr}
-\chapter{Zhodnocení výsledků a závěr}
+\renewcommand{\chaptername}{Závěr}
+\chapter{Závěr}
 
 \addcontentsline{toc}{chapter}{Seznam zdrojů}
 \bibliographystyle{plain}

@@ -127,10 +127,10 @@ Jsou užitečné v oblastech, kde připojení k elektrické síti není možné.
     \centering
     \begin{tikzpicture}[>=stealth,thick]
         % Nodes
-        \node[draw, minimum height=1cm] (panel) at (0,0) {Panel};
-        \node[draw, circle] (inverter) at (3,0) {Invertor};
+        \node[draw, circle] (panel) at (0,0) {Panel};
+        \node[draw, diamond, aspect=1] (inverter) at (3,0) {Invertor};
         \node[draw] (baterie) at (3,-2) {Baterie};
-        \node[draw, circle] (odb) at (6,0) {Spotřebič};
+        \node[draw, minimum width=2cm] (odb) at (6,0) {Spotřebič};
         % Arrows
         \draw[->] (panel) -- (inverter);
         \draw[->] (inverter) -- (baterie);
@@ -168,9 +168,9 @@ Veškerou přebytečnou energii lze prodat dodavateli elektřiny a v případě 
     \centering
     \begin{tikzpicture}[>=stealth,thick]
         % Nodes
-        \node[draw, minimum height=1cm] (panel) at (0,0) {Panel};
-        \node[draw, circle] (inverter) at (3,0) {Invertor};
-        \node[draw, circle] (odb) at (6,0) {Spotřebič};
+        \node[draw, circle] (panel) at (0,0) {Panel};
+        \node[draw, diamond, aspect=1] (inverter) at (3,0) {Invertor};
+        \node[draw, minimum width=2cm] (odb) at (6,0) {Spotřebič};
         \node[draw, minimum width=2cm] (sita) at (3,-2) {Elektrická síť};
         % Arrows
         \draw[->] (panel) -- (inverter);
@@ -209,10 +209,10 @@ Jsou připojeny k elektrické síti, ale zároveň mají akumulátory, které sl
     \centering
     \begin{tikzpicture}[>=stealth,thick]
         % Nodes
-        \node[draw, minimum height=1cm] (panel) at (0,0) {Panel};
-        \node[draw, circle] (inverter) at (3,0) {Invertor};
+        \node[draw, circle] (panel) at (0,0) {Panel};
+        \node[draw, diamond, aspect=1] (inverter) at (3,0) {Invertor};
         \node[draw] (baterie) at (2,-2) {Baterie};
-        \node[draw, circle] (odb) at (6,0) {Spotřebič};
+        \node[draw, minimum width=2cm] (odb) at (6,0) {Spotřebič};
         \node[draw, minimum width=2cm] (sita) at (4.5,-2) {Elektrická síť};
         % Arrows
         \draw[->] (panel) -- (inverter);
@@ -243,15 +243,27 @@ Pro tuto úsporu jsou důležité dva faktory:
 
 \begin{itemize}
     \item \textbf{Kolik elektřiny fotovoltaika vyrobí.} V ČR je horní limit pro výkon domácí elektrárny 10 \si{\kW}p. Pokud pro hrubý odhad výroby použijeme jednoduchý přepočet, kdy 1 instalovaný \si{\kW}p vyrobí za rok 1 MWh, zjistíme, že v ČR lze ročně ušetřit maximálně 10 MWh. Na vyšší výkon je potřeba licence nebo provoz v ostrovním režimu.
-    \item \textbf{Kolik elektřiny domácnost spotřebuje.} Fotovoltaika vyrábí nejvíce elektřiny vyrábí přes den a v létě. Největší spotřeba domácnosti je ale v zimě a večer. Spotřeba domácnosti
+    \item \textbf{Kolik elektřiny domácnost spotřebuje.} Fotovoltaika vyrábí nejvíce elektřiny vyrábí přes den a v létě. Největší spotřeba domácnosti je ale v zimě a večer. Spotřeba domácnosti se tedy s dobour výroby fotovoltaiky protíná minimálně. Tento problém významně pomáhají vyřešit baterie, kdy lze vyrobenou energii přes den uložit a spotřebovat ji až večer.
 \end{itemize}
 
+Na obrázku \ref{fig:average_daily_consumption} je zobrazena denní spotřeba elektřiny v domácnosti během všedního dne.
+
 % \includegraphics[width=\textwidth]{static/average-daily-consumption.png}
-\begin{figure}
+\begin{figure}[H]
     % https://www.researchgate.net/publication/326358349_Load_Profile_of_Typical_Residential_Buildings_in_Bulgaria
-    \includegraphics[width=\textwidth]{static/average-daily-consumption.png}
+    \includegraphics[width=\textwidth]{static/energy_consumption.png}
     \caption{Denní spotřeba elektřiny v domácnosti během všedního dne.} % Zdroj: \cite{bulgaria}
     \label{fig:average_daily_consumption}
 \end{figure}
 
 \subsection{Prodej přebytků elektřiny}
+Přebytky elektřiny je možné prodat do sítě. Je třeba upřesnit 3 věci:
+
+\begin{enumerate}
+    \item Výkup elektřiny v ČR momentálně nabízí jen několik firem. Podmínky výkupu se mohou lišit.
+    \item Jedná se o prodej elektřiny z domácí fotovoltaiky bez licence na obchod s elektřinou. Je to nejjednodušší způsob jak zhodnotit elektřinu, aniž by se ze zákazníka stal podnikatel v energetice se všemi povinnostmi, které k tomu náleží.
+    \item Cena elektřiny se skládá ze dvou složel -- obchodní a regulované. Obchodní složka je cena samostatné silové elektřiny. Cena je smluvně daná u dodavatelem. Regulovaná složka je cena za distrubuci. Tu určuje stát. Zákazník jí platí vždy, když elektřinu odebírá ze sítě.
+\end{enumerate}
+
+Prodej přebytků je realizován dvěma způsoby. Buďto elektřina za peníze nebo elektřina za elektřinu.
+V prvním případě jednoduše zákazník dostane tolik peněz, kolik elktřiny o sítě prodá.
